@@ -61,7 +61,7 @@ block main
                           else    
                             button(class='products__item-favorite products__item-favorite--'+favorite)
                           a(href="#").products__item-img
-                            img(src='assets/img/'+img, alt="" onerror="this.src = 'assets/img/default-img.png'")
+                            img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, alt="" onerror="this.src = 'assets/img/default-img.png'").lazy
                         .products__item-price
                           if percent === 'percent-none'
                           else
@@ -121,7 +121,7 @@ block main
           .brands
             mixin brand(img)
               a(href="#").brands__brand
-                img(src="assets/img/"+img, alt="")
+                img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/"+img, alt="").lazy
             +brand('brand1.webp')
             +brand('brand2.webp')
             +brand('brand3.webp')
@@ -135,4 +135,5 @@ block main
               
     include includes/footer/footer
   
-  include includes/scripts 
+  script(src="assets/lazyload.min.js") 
+  include includes/scripts
