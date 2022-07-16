@@ -9,6 +9,7 @@ header.header
           input(type="search" placeholder="Искать на happy")
           button(type="submit").submit
             i.icon-ic_search 
+            //- Выпадающий список (результат поиска) 
           .header__search-dropdown(style="display: none;")
             mixin searchOption(result)
               a(href="#").header__search-dropdown-result=result

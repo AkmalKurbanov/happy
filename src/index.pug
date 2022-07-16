@@ -61,8 +61,8 @@ block main
                           else    
                             button(class='products__item-favorite products__item-favorite--'+favorite)
                           a(href="#").products__item-img
-                            img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, alt="" onerror="this.src = 'assets/img/default-img.png'").lazy
-                        .products__item-price
+                            img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, onerror="this.src='assets/img/default-img.png'" alt="").lazy
+                        .products__item-price                                                                                                                      
                           if percent === 'percent-none'
                           else
                             .discount-price
