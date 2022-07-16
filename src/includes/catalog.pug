@@ -1,2 +1,17 @@
-.catalog 
-  
+.catalog-menu
+  .catalog-menu__close   
+    i.icon-ic_close_fill 
+  .title-wrap
+    h2.title Каталог
+  .catalog-menu__list
+    mixin category(item,active)
+      a(href="#" class=active).catalog-menu__category=item  
+    +category('Электроника','active')
+    +category('Компьютеры')
+    +category('Бытовая техника')
+    +category('Одежда и обувь')
+    +category('Красота и гигиена')
+    +category('Детские товары')
+    +category('Дом')
+    +category('Дача и сад')
+    +category('Строительство и ремонт')

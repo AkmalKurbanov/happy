@@ -9,8 +9,7 @@ header.header
           input(type="search" placeholder="Искать на happy")
           button(type="submit").submit
             i.icon-ic_search 
-          //- .header__search-dropdown(style="display: none;")
-          .header__search-dropdown
+          .header__search-dropdown(style="display: none;")
             mixin searchOption(result)
               a(href="#").header__search-dropdown-result=result
             +searchOption('macbook air m1')  
@@ -45,7 +44,7 @@ header.header
         +controller('happy_profile','Профиль','')
 
   .header__bottom.container
-    .header__catalog-trigger 
+    .header__catalog-trigger.catalog-trigger-js 
       i.icon-ic_menu
       | Каталог товаров
     .header__nav
