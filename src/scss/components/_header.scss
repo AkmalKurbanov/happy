@@ -1,1 +1,459 @@
-// .header {}
+.header {
+  box-shadow: 0 rem(1) 0 rgba(0, 0, 0, 0.1);
+  padding: rem(20) 0 rem(12);
+
+  @include xs {
+    padding: rem(9) 0;
+  }
+
+  &__top {
+    margin-bottom: rem(27);
+    @include aic-jfcsb;
+
+    @include xs {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+  }
+
+  &__col {
+    margin-right: rem(85);
+
+    @include lg {
+      margin-right: rem(20);
+    }
+
+    @include md {
+      margin-right: rem(10);
+    }
+
+    @include sm {
+      margin-right: rem(5);
+    }
+
+    @include xs {
+      margin-right: 0;
+    }
+
+
+    &:first-child {
+      width: 17.6%;
+
+      @include xs {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 51.68%;
+
+      @include xs {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      width: 30.72%;
+      margin-right: 0;
+
+      @include xs {
+        display: none;
+      }
+    }
+
+
+  }
+
+  &__search {
+    position: relative;
+
+    input {
+      padding: rem(12) rem(55) rem(12) rem(20);
+      color: $neu_primary_1;
+      border-radius: rem(28);
+      border: none;
+      background-color: $neu_primary_5;
+      max-width: rem(564);
+      width: 100%;
+      min-height: rem(44);
+      border-radius: rem(28);
+      @include regular_14;
+
+      @include xs {
+        min-height: rem(32);
+        padding: rem(6) rem(45) rem(6) rem(16);
+        @include regular_12;
+      }
+
+      @include placeholder {
+        color: $neu_primary_3;
+      }
+
+      &:focus-visible {
+        outline: rem(2) solid $br_primary_2;
+        background-color: $neu_primary_6;
+      }
+
+    }
+
+    .submit {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem(20);
+      cursor: pointer;
+
+      @include xs {
+        right: rem(14);
+      }
+
+      i {
+        color: $neu_primary_1;
+        font-size: rem(19);
+      }
+    }
+  }
+
+  &__top-panel-controllers {
+    @include aic-jfcsb;
+    width: 100%;
+  }
+
+
+
+  &__search-dropdown {
+    padding: rem(8);
+    background-color: $neu_primary_6;
+    border-radius: rem(16);
+    @include fdc;
+    margin-top: rem(8);
+    position: absolute;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: rem(235);
+    z-index: 9;
+
+    @include xs {
+      margin-top: rem(5);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    /* IE и Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  &__search-dropdown-result {
+    border-radius: rem(10);
+    color: $neu_primary_1;
+    @include regular_14;
+    padding: rem(12);
+    transition: $tr;
+
+    @include xs {
+      @include regular_12;
+    }
+
+    &:hover {
+      background: $br_primary_4;
+    }
+  }
+
+  &__controller-count-points {
+    background-color: $br_secondary_2;
+    border-radius: rem(20);
+    @include aic-jcc;
+    @include medium_12;
+    color: $neu_primary_6;
+    min-height: rem(24);
+    padding: rem(4) rem(8);
+  }
+
+  &__bottom {
+    @include aic;
+
+    @include xs {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include aic;
+    position: relative;
+
+    ul {
+      @include aic;
+      padding: 0 rem(24);
+      position: relative;
+
+      @include sm {
+        padding: 0 rem(10);
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        height: rem(20);
+        width: 2px;
+        background-color: $neu_primary_4;
+        right: 0;
+      }
+
+      li {
+        margin-right: rem(24);
+
+        @include sm {
+          margin-right: rem(10);
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      &.toggle-fade {
+        z-index: 8;
+
+        @include lg {
+          flex-direction: column;
+          align-items: flex-start;
+          position: absolute;
+          left: 100%;
+          top: rem(-50);
+          min-width: rem(200);
+          background-color: $neu_primary_6;
+          padding: rem(10) 0 !important;
+          border-radius: rem(10);
+          margin-left: rem(30);
+          opacity: 0;
+          pointer-events: none;
+          transition: $tr;
+
+          li {
+            margin-right: 0 !important;
+            padding: rem(5) rem(15);
+            width: 100%;
+            transition: $tr;
+
+            &:hover {
+              background-color: $neu_primary_5;
+
+              a {
+                color: $br_secondary_2;
+              }
+            }
+
+            a {
+              display: block;
+            }
+          }
+        }
+
+        @include md {
+          left: auto;
+          margin: 0;
+          right: 0;
+        }
+
+        &.open {
+          top: rem(-14);
+          pointer-events: inherit;
+          opacity: 1;
+
+          @include md {
+            top: calc(100% + 10px);
+          }
+        }
+
+      }
+    }
+  }
+
+  &__nav-trigger {
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-70%);
+    font-size: rem(25);
+    color: $br_secondary_2;
+    cursor: pointer;
+    transition: $tr;
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    display: none;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+    @include lg {
+      display: block;
+    }
+
+    @keyframes blinker {
+      0% {
+        opacity: 0
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      to {
+        opacity: 0
+      }
+    }
+  }
+
+  &__catalog-trigger {
+    padding-right: rem(24);
+    @include aic;
+    position: relative;
+
+    @include sm {
+      padding-right: rem(10);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: rem(20);
+      width: 2px;
+      background-color: $neu_primary_4;
+      right: 0;
+    }
+
+    i {
+      margin-right: rem(5);
+      font-size: rem(17);
+    }
+  }
+
+  &__catalog-trigger,
+  .header__nav ul li a {
+    color: $neu_primary_1;
+    @include regular_14;
+    cursor: pointer;
+    transition: $tr;
+
+    &:hover {
+      color: $br_secondary_2;
+    }
+  }
+}
+
+.logo {
+  max-width: rem(140);
+  width: 100%;
+  min-height: 40px;
+  @include aic;
+
+  @include xs {
+    margin: auto;
+    margin-bottom: rem(12);
+  }
+
+  img {
+    height: 100%;
+  }
+
+
+}
+
+
+
+.header,
+.mobile-nav {
+  &__controller {
+    @include aic-fdc;
+    color: $neu_primary_1;
+    transition: $tr;
+    max-width: rem(70);
+    width: 100%;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+
+      .header__controller-title,
+      .header__controller-icon i {
+        color: $br_secondary_2;
+      }
+    }
+  }
+
+  &__controller-count {
+    position: absolute;
+    border-radius: 100%;
+    background-color: $br_primary_4;
+    color: $neu_primary_6;
+    @include medium_12;
+    @include aic-jcc;
+    left: calc(100% - 16px);
+    top: rem(-3);
+    padding: 3px;
+
+    @include md {
+      left: calc(100% - 20px);
+      top: rem(-13);
+    }
+
+    span {
+      background-color: $br_secondary_2;
+      min-width: rem(16);
+      width: 100%;
+      height: rem(16);
+      border-radius: rem(8);
+      @include aic-jcc;
+      padding: rem(5);
+    }
+  }
+
+  &__controller-top {
+    margin-bottom: rem(6);
+    min-height: rem(24);
+    max-width: rem(24);
+    width: 100%;
+    @include aifs-jcc;
+  }
+
+  &__controller-icon {
+    position: relative;
+
+    i {
+      font-size: rem(22);
+      transition: $tr;
+    }
+  }
+
+  &__controller-title {
+    color: $neu_primary_1;
+    @include regular_12;
+    transition: $tr;
+
+    @include md {
+      display: none;
+    }
+  }
+}

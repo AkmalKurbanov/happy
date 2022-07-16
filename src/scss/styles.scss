@@ -7,6 +7,7 @@
 // @import "../../node_modules/--/--/";
 
 @import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
@@ -15,6 +16,7 @@
 // @import "../assets/icons/fontello/--/--/";
 // @import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
 
+@import "../assets/icons/fontello/css/icon.css";
 //---------------------------------------------
 
 // подключение css файлов
@@ -22,6 +24,7 @@
 @import "fonts";
 @import "variables";
 @import "mixins/media";
+@import "mixins/flex";
 
 
 //---------------------------------------------
@@ -32,5 +35,11 @@
 // Компоненты
 
 @import "components/base";
+@import "components/preloader";
 @import "components/header";
+@import "components/mobile-nav";
+@import "components/hero";
+@import "components/tiles";
+@import "components/product-item";
+@import "components/brands";
 @import "components/footer";

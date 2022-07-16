@@ -1,14 +1,14 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin'); // сжимает картинки
-// const webp = require('gulp-webp'); // конвертируйте изображения в WebP
+const webp = require('gulp-webp'); // конвертируйте изображения в WebP
 
 module.exports = function imageMinify() {
   return gulp.src('./src/assets/img/**/*')
 
     // конвертируйте изображения в WebP
-    // .pipe(webp({
-    //   quality: 70
-    // }))
+    .pipe(webp({
+      quality: 70
+    }))
     // конвертируйте изображения в WebP
 
     .pipe(gulp.dest('./dist/assets/img')),

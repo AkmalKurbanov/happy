@@ -1,0 +1,59 @@
+.mobile-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $br_primary_1;
+  z-index: 9;
+  @include aifs-jfcsb;
+  padding: rem(5) 0;
+  display: none;
+
+  @include xs {
+    display: flex;
+  }
+
+  &__item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      color: $br_tertiary_2;
+    }
+
+    &.active {
+
+      .mobile-nav__controller-title,
+      i {
+        color: $br_tertiary_2;
+      }
+    }
+  }
+
+  &__controller-top {
+    margin-bottom: rem(2);
+  }
+
+  &__controller-icon {
+    color: $neu_primary_6;
+  }
+
+  &__controller-title {
+    color: $neu_primary_6;
+    @include medium_10;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  &__controller-count {
+    background-color: $br_primary_1;
+
+    @include md {
+      top: rem(-3);
+    }
+  }
+}

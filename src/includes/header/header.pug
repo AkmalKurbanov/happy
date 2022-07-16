@@ -1,1 +1,67 @@
-header 1
+header.header
+  .header__top.container 
+    .header__col
+      a(href="#").logo
+        img(src="assets/img/logo.svg", alt="")
+    .header__col
+      form(action="")
+        .header__search   
+          input(type="search" placeholder="Искать на happy")
+          button(type="submit").submit
+            i.icon-ic_search 
+          //- .header__search-dropdown(style="display: none;")
+          .header__search-dropdown
+            mixin searchOption(result)
+              a(href="#").header__search-dropdown-result=result
+            +searchOption('macbook air m1')  
+            +searchOption('macbook air')  
+            +searchOption('macbook')  
+            +searchOption('macbook pro 16')  
+            +searchOption('macbook pro m1')  
+            +searchOption('macbook air m1')  
+            +searchOption('macbook air')  
+            +searchOption('macbook')  
+            +searchOption('macbook pro 16')  
+            +searchOption('macbook pro m1')  
+    .header__col
+      .header__top-panel-controllers
+        a(href="#").header__controller.header__controller--points
+          .header__controller-top
+            .header__controller-count-points 0
+          .header__controller-title Баллов
+        mixin controller(icon,title,count)
+         a(href="#").header__controller
+          .header__controller-top
+            .header__controller-icon
+              if count === ''
+              else
+                .header__controller-count
+                  span=count
+              i(class='icon-ic_'+icon)
+          .header__controller-title=title
+        +controller('orders','Заказы','')
+        +controller('favorite','Избранное',2)
+        +controller('cart','Корзина', 6)
+        +controller('happy_profile','Профиль','')
+
+  .header__bottom.container
+    .header__catalog-trigger 
+      i.icon-ic_menu
+      | Каталог товаров
+    .header__nav
+      .header__nav-trigger ...
+
+      ul
+        mixin nav(item)
+          li 
+            a(href="#")=item  
+        +nav('Электроника')      
+        +nav('Одежда')      
+        +nav('Детям')      
+        +nav('Красота')      
+        +nav('Дом и сад')      
+      ul(class="toggle-fade")
+        +nav('Как заказать?')      
+        +nav('Способы оплаты')      
+        +nav('Доставка')      
+        +nav('Контакты')      

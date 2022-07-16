@@ -1,1 +1,77 @@
-div 2
+footer.footer
+  .footer__top
+    .container
+      .footer__col-wrap 
+        .footer__col
+          .footer__title Заказывайте в новом приложении Happy и 
+            a(href="#") получайте бонусы 
+          .footer__app-link-block
+            a(href="#").footer__app-link
+              img(src="assets/img/googleplay.webp", alt="")
+            a(href="#").footer__app-link
+              img(src="assets/img/appstore.webp", alt="")
+        .footer__col
+          .footer__phone-illustartion 
+            img(src="assets/img/apple1.webp", alt="")
+            img(src="assets/img/apple2.webp", alt="")
+            img(class="sm" src="assets/img/apple3.webp", alt="")
+          .footer__qr 
+            .footer__explanation Наведите камеру на QR, чтобы скачать
+              span
+                svg(width='34' height='33' viewBox='0 0 34 33' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M1.97265 0.767725C1.84437 0.230545 1.30491 -0.100932 0.767725 0.0273498C0.230545 0.155632 -0.100932 0.695095 0.0273498 1.23227L1.97265 0.767725ZM33.7071 25.7071C34.0976 25.3166 34.0976 24.6834 33.7071 24.2929L27.3431 17.9289C26.9526 17.5384 26.3195 17.5384 25.9289 17.9289C25.5384 18.3195 25.5384 18.9526 25.9289 19.3431L31.5858 25L25.9289 30.6569C25.5384 31.0474 25.5384 31.6805 25.9289 32.0711C26.3195 32.4616 26.9526 32.4616 27.3431 32.0711L33.7071 25.7071ZM0.0273498 1.23227C2.00166 9.49969 11.3576 26 33 26V24C12.6125 24 3.81924 8.50031 1.97265 0.767725L0.0273498 1.23227Z' fill='#FC5230')
+            .footer__qr-code
+              img(src="assets/img/qr.webp", alt="")
+
+  .footer__middle
+    .container
+      .footer__col-wrap 
+        .footer__col
+          .footer__title Happy KG
+          p Компания «Happy KG» – ведущая национальная сеть магазинов электробытовой и компьютерной техники.
+        .footer__col
+          .footer__title Покупателям
+          ul 
+            mixin link(item)
+              li 
+                a(href="#")=item
+            +link('Способы оплаты')    
+            +link('Кредит и рассрочка')    
+            +link('Доставка')    
+            +link('Гарантия на товар')    
+            +link('Обмен и возврат')    
+            +link('Обратная связь')    
+        .footer__col
+          .footer__title О нас
+          ul 
+            +link('Кто мы?')    
+            +link('Контакты')    
+            +link('Сотрудничество')    
+            +link('Условия пользования')    
+            +link('Политика конфиденциальности')    
+        .footer__col
+          .footer__title Контакты
+          p ОсОО “Happy KG”, г. Бишкек, ул. Суюмбаева, 140/2
+          ul
+            +link('+996 (777) 123456')    
+            +link('+996 (500) 123456')    
+  .footer__bottom 
+    .container  
+      .footer__col-wrap 
+        .footer__col 
+          .copyright 
+            p © 1998 – 2022 ОсОО «Happy KG». Все права защищены.
+        .footer__col 
+          .social
+            ul 
+              mixin social(icon)
+                li 
+                  a(href="#")
+                    i(class=icon) 
+              +social('icon-sl_whatsapp')
+              +social('icon-sl_instagram')
+              +social('icon-sl_tiktok')
+              +social('icon-sl_facebook')
+              +social('icon-sl_youtube')
+              +social('icon-sl_twitter')
+              +social('icon-sl_linkedin')

@@ -5,11 +5,134 @@ block main
   .wrapper
     .content
       include includes/header/header
- 
-
-     
-
+      include includes/preloader
+      include includes/mobile-nav
+      include includes/catalog
+      .container
+        .hero
+          .swiper-container.hero-slider
+            .swiper-wrapper
+              mixin hero
+                .swiper-slide=title
+              +hero
+              +hero
+              +hero
+              +hero
+              +hero
+            .swiper-pagination
+        .tiles
+          .tiles__tile.tiles__tile--full
+          .tiles__tile.tiles__tile--half
+          .tiles__tile.tiles__tile--half
+          .tiles__tile.tiles__tile--third
+          .tiles__tile.tiles__tile--third
+          .tiles__tile.tiles__tile--third
+    .container
+      section.section
+        .section__col
+          .title-wrap
+            h3.title Лучшие новинки
+            a(href="#").more Все 
+              span новинки
+              
+        .section__col
+          .products
+            .swiper-container.products-js
+              .swiper-wrapper
+                mixin product(img,price,percent,desc,newProd,hit,cashback,favorite,btn)
+                  .swiper-slide
+                    .products__item
+                      div
+                        .products__item-top
+                          .products__item-top-elements
+                            div
+                              if newProd === 'newprod-none'
+                              else
+                                .products__item-status.products__item-status--new=newProd
+                              if hit === 'hit-none'
+                              else
+                                .products__item-status.products__item-status--hit=hit
+                              
+                              if cashback === 'cashback-none'
+                              else
+                                .products__item-status.products__item-status--cashback=cashback
+                          if favorite === 'favorite-none'
+                            button.products__item-favorite
+                          else    
+                            button(class='products__item-favorite products__item-favorite--'+favorite)
+                          a(href="#").products__item-img
+                            img(src='assets/img/'+img, alt="" onerror="this.src = 'assets/img/default-img.png'")
+                        .products__item-price
+                          if percent === 'percent-none'
+                          else
+                            .discount-price
+                              s.irrelevant=price
+                                | сом
+                              span.discount -
+                                span(data-val=percent)=percent  
+                                |%
+                          .actual-price(data-val=price)
+                            span=price
+                            | сом
+                        .products__item-desc=desc
+                      if btn === 'basket'
+                        .products__item-btn
+                          button.add-to-basket В корзину
+                          .products__item-counter
+                            .products__item-counter-trash
+                              i.icon-ic_trash
+                            input.count-minus(type='button' value='-')
+                            span
+                              input.counter(type='number' value='0')
+                              | шт.
+                            input.count-plus(type='button' value='+')
+                      else if btn === 'not-available'
+                        .products__item-btn
+                          .not-available Нет в наличии
+                        
+                    
+                +product('product1.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','Новинка','Хит','cashback-none', 'favorite-none','basket')    
+                +product('product2.webp','29400','percent-none','Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический','Новинка','hit-none','cashback-none','added','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('','12500','percent-none','Умная колонка JBL Link Music','newprod-none','hit-none','cashback-none','favorite-none','not-available')    
+    .ribbon-wrap
+      .ribbon
+      .ribbon
+    .container
+      section.section
+        .section__col
+          .title-wrap
+            h3.title Хиты продаж
+            a(href="#").more Все хиты
+        .section__col
+          .products
+            .swiper-container.products-js
+              .swiper-wrapper
+                +product('product4.webp','299990','40','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro','newprod-none','hit-none','cashback-none', 'favorite-none','basket')    
+                +product('product5.webp','13570','18','Умная колонка Apple HomePod mini, белый','newprod-none','Хит','Кэшбек x2', 'favorite-none','basket')
+                +product('product1.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','Новинка','Хит','cashback-none', 'favorite-none','basket')    
+                +product('product2.webp','29400','percent-none','Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический','Новинка','hit-none','cashback-none','added','basket')       
+    .container
+      section.section
+        .section__col
+          .title-wrap
+            h3.title Бренды
+        .section__col
+          .brands
+            mixin brand(img)
+              a(href="#").brands__brand
+                img(src="assets/img/"+img, alt="")
+            +brand('brand1.webp')
+            +brand('brand2.webp')
+            +brand('brand3.webp')
+            +brand('brand4.webp')
+            +brand('brand5.webp')
+            +brand('brand5.webp')
+            +brand('brand4.webp')
+            +brand('brand3.webp')
+            +brand('brand2.webp')
+            +brand('brand1.webp')
+              
     include includes/footer/footer
-
-
+  
   include includes/scripts 

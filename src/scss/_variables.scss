@@ -1,5 +1,29 @@
 @import "mixins/rem";
 
 $tr: all .3s;
-$helvetica: 'FontName';
-$taurus: 'FontName';
+$rubik: 'Rubik',
+sans-serif;
+
+// colors
+$br_primary_1: #1C3F3A;
+$br_primary_2: #19987A;
+$br_primary_3: #54C0A7;
+$br_primary_4: #E4F1E8;
+$br_secondary_1: #DD4515;
+$br_secondary_2: #FC5230;
+$br_secondary_3: #FC9F81;
+$br_secondary_4: #FDE7E0;
+$br_tertiary_1: #CED330;
+$br_tertiary_2: #F0F55B;
+$br_tertiary_3: #FAFD99;
+$br_tertiary_4: #FEFFDF;
+$neu_primary_1: #000000;
+$neu_primary_2: rgba(#000000, 0.65);
+$neu_primary_3: rgba(#000000, 0.35);
+$neu_primary_4: rgba(#000000, 0.1);
+$neu_primary_5: rgba(#000000, 0.05);
+$neu_primary_6: #fff;
+
+
+// font-weight
+

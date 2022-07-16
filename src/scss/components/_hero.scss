@@ -1,0 +1,62 @@
+.hero {
+  border-radius: rem(16);
+  overflow: hidden;
+  background-color: $br_primary_3;
+  margin-top: rem(15);
+  margin-bottom: rem(15);
+  
+  @include xs {
+    margin-top: rem(9);
+    margin-bottom: rem(8);
+    border-radius: rem(10);
+  }
+
+  .swiper-slide {
+    min-height: rem(340);
+
+    @include xs {
+      min-height: rem(240);
+    }
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    border-radius: rem(20);
+    padding: rem(3) rem(4);
+    background-color: $neu_primary_4;
+    display: inline-block;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: rem(8);
+
+    @include xs {
+      @include aic;
+      padding: rem(6) rem(4);
+      bottom: rem(12);
+    }
+
+    .swiper-pagination-bullet {
+      background-color: $neu_primary_4;
+      opacity: 1;
+      cursor: pointer;
+      height: rem(8);
+      width: rem(8);
+      transition: $tr;
+
+      @include xs {
+        height: rem(4);
+        width: rem(4);
+      }
+
+      &.swiper-pagination-bullet-active {
+        background-color: $neu_primary_6;
+      }
+
+      &:hover {
+        background-color: $neu_primary_6;
+      }
+    }
+  }
+}

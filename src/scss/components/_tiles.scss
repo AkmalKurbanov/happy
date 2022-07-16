@@ -1,0 +1,55 @@
+.tiles {
+  @include jfcsb-fww;
+  margin-bottom: rem(45);
+
+  &__tile {
+    min-height: rem(200);
+    border-radius: rem(16);
+    overflow: hidden;
+    margin-bottom: rem(16);
+    
+    @include xs {
+      min-height: rem(148);
+      margin-bottom: rem(8);
+      border-radius: rem(10);
+    }
+
+    &:nth-child(3) {
+      background-color: $neu_primary_6;
+    }
+
+    &:nth-child(4) {
+      background-color: $br_secondary_2;
+    }
+
+    &:nth-child(5) {
+      background-color: $br_primary_2;
+    }
+
+    &:nth-child(6) {
+      background-color: $neu_primary_1;
+    }
+
+    &--full {
+      width: 100%;
+      background-color: $br_primary_2;
+    }
+
+    &--half {
+      width: calc(50% - 8px);
+      background-color: $br_primary_3;
+
+      @include xs {
+        width: calc(50% - 4px);
+      }
+    }
+
+    &--third {
+      width: calc(33.33% - 8px);
+
+      @include xs {
+        width: calc(33.33% - 4px);
+      }
+    }
+  }
+}

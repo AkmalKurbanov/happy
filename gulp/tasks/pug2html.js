@@ -3,7 +3,7 @@ const plumber = require('gulp-plumber'); // Предотвращает разр�
 const pug = require('gulp-pug'); // компилирует шаблоны Pug
 const webphtml = require('gulp-webp-html'); // заменяет <img /> на <picture /> поддерживает webp
 let Fs = require('fs');
-let dataFromFile = JSON.parse(Fs.readFileSync('./src/assets/data.json'));
+// let dataFromFile = JSON.parse(Fs.readFileSync('./src/assets/data.json'));
 const browsersync = require('browser-sync'); // живая перезагрузка страницы
 module.exports = function pug2html() {
   return gulp.src(['./src/**/*.pug'])
@@ -16,7 +16,7 @@ module.exports = function pug2html() {
     .pipe(pug({
       doctype: 'html',
       pretty: true,
-      locals: dataFromFile || {}
+      // locals: dataFromFile || {}
     }))
     // компилирует шаблоны Pug
 

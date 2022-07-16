@@ -1,0 +1,93 @@
+.brands {
+  @include fww;
+  margin-bottom: rem(45);
+
+  &__brand {
+    max-width: rem(180);
+    width: 100%;
+    height: rem(80);
+    margin-bottom: rem(15);
+    background-color: $neu_primary_6;
+    border-radius: rem(10);
+    overflow: hidden;
+    padding: rem(10) rem(15);
+    @include aic-jcc;
+    margin-right: rem(14);
+
+    @include lg {
+      max-width: calc(25% - 10.5px);
+      padding: rem(9) rem(14);
+    }
+
+    @include md {
+      max-width: calc(20% - 11.2px);
+      height: rem(65);
+      padding: rem(8) rem(13);
+    }
+
+    @include sm {
+      max-width: calc(25% - 10.5px);
+      padding: rem(7) rem(12);
+    }
+
+    @include xs {
+      max-width: calc(33.33% - 5.4px);
+      margin-right: rem(8);
+      margin-bottom: rem(8);
+      height: rem(54);
+      padding: rem(5) rem(11);
+    }
+
+    &:nth-child(5n) {
+      margin-right: 0;
+
+      @include lg {
+        margin-right: rem(14);
+      }
+
+      @include md {
+        margin-right: 0;
+      }
+
+      @include sm {
+        margin-right: rem(14);
+      }
+
+      @include xs {
+        margin-right: rem(8);
+      }
+    }
+
+    &:nth-child(4n) {
+      @include lg {
+        margin-right: 0;
+      }
+
+      @include md {
+        margin-right: rem(14);
+      }
+
+      @include sm {
+        margin-right: 0;
+      }
+
+      @include xs {
+        margin-right: rem(8);
+      }
+
+    }
+
+    &:nth-child(3n) {
+      @include xs {
+        margin-right: 0;
+      }
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      -o-object-fit: contain;
+      object-fit: contain;
+    }
+  }
+}

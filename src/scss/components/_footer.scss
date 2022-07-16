@@ -1,3 +1,293 @@
 .footer {
   flex: 0 0 auto;
+  background-color: $neu_primary_5;
+
+  &__col-wrap {
+    @include aistr-jfcsb;
+  }
+
+  &__top {
+    border-bottom: rem(1) solid $neu_primary_4;
+
+    .footer__title {
+      a {
+        color: #000;
+        pointer-events: none;
+
+        @include xs {
+          color: $br_secondary_2;
+          pointer-events: inherit;
+        }
+      }
+
+      @include xs {
+        @include regular_14;
+      }
+    }
+
+    .footer__col {
+      padding: rem(45) 0;
+
+      @include lg {
+        padding: rem(25) 0;
+      }
+
+      @include md {
+        padding: rem(25) 0;
+      }
+
+      @include sm {
+        padding: rem(15) 0;
+      }
+
+      @include xs {
+        padding: rem(30) 0 rem(25);
+      }
+
+      &:first-child {
+        @include xs {
+          @include fdc-jfcsb;
+        }
+      }
+
+      &:nth-child(2) {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+      }
+
+    }
+  }
+
+
+  &__title {
+    color: $neu_primary_1;
+    @include semibold_20;
+    margin-bottom: rem(55);
+    max-width: rem(360);
+    width: 100%;
+
+    @include lg {
+      margin-bottom: rem(35);
+    }
+
+    @include md {
+      margin-bottom: rem(25);
+    }
+
+    @include sm {
+      @include semibold_16;
+      margin-bottom: rem(20);
+    }
+
+    @include md {
+      @include semibold_20;
+      margin-bottom: rem(16);
+    }
+
+  }
+
+  &__app-link-block,
+  &__app-link {
+    @include aic;
+  }
+
+  &__app-link {
+    margin-right: rem(10);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__phone-illustartion {
+    height: 100%;
+    width: rem(420);
+    position: relative;
+
+    @include sm {
+      width: rem(200);
+    }
+
+    img {
+      max-width: 50%;
+      width: 100%;
+      position: absolute;
+
+      @include sm {
+        display: none;
+      }
+
+      &:first-child {
+        bottom: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .sm {
+      display: none;
+      max-width: 100%;
+      bottom: 0;
+      min-width: rem(120);
+
+      @include sm {
+        display: block;
+      }
+
+      @include xs {
+        position: relative;
+      }
+    }
+  }
+
+  &__explanation {
+    position: relative;
+    @include regular_14;
+    text-align: right;
+    @include fdc-aife;
+    max-width: rem(165);
+    width: 100%;
+
+    span {
+      margin-top: rem(5);
+    }
+  }
+
+  &__qr {
+    @include aic;
+
+    @include xs {
+      display: none;
+    }
+  }
+
+  &__qr-code {
+    max-width: rem(180);
+    width: 100%;
+  }
+
+  &__middle {
+    padding: rem(40) 0;
+    border-bottom: rem(1) solid $neu_primary_4;
+
+    @include xs {
+      padding: rem(28) 0;
+    }
+
+    .footer__col-wrap {
+      @include sm {
+        @include fww;
+      }
+    }
+
+    .footer__col {
+      width: 24%;
+      padding-right: rem(20);
+
+      @include lg {
+        padding-right: rem(17);
+      }
+
+      @include md {
+        padding-right: rem(14);
+      }
+
+      @include sm {
+        width: 50%;
+        margin-bottom: rem(40);
+        padding-right: rem(11);
+      }
+
+      @include xs {
+        width: 100%;
+        margin-bottom: rem(40);
+        padding: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+
+      * {
+        @include regular_14;
+        color: $neu_primary_1;
+      }
+
+      ul {
+        li {
+          margin-bottom: rem(3);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            transition: $tr;
+
+            &:hover {
+              color: $br_secondary_2;
+            }
+          }
+        }
+      }
+    }
+
+    .footer__title {
+      margin-bottom: rem(15);
+      color: $neu_primary_1;
+      @include semibold_20;
+    }
+  }
+
+  &__bottom {
+    padding: rem(25) 0;
+
+    .footer__col-wrap {
+      @include sm {
+        @include fdc;
+      }
+
+      @include xs {
+        flex-direction: column-reverse;
+      }
+
+      .copyright {
+        @include sm {
+          margin-bottom: rem(15);
+        }
+
+        @include xs {
+          margin-top: rem(20);
+          margin-bottom: 0;
+          @include regular_14;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  ul {
+    @include aic;
+  }
+
+  a {
+    &:hover {
+      i {
+        color: $br_secondary_2;
+      }
+    }
+
+    i {
+      transition: $tr;
+      color: $neu_primary_2;
+      font-size: rem(20);
+    }
+  }
 }

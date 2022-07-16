@@ -1,0 +1,17 @@
+.mobile-nav
+  mixin controller(icon,title,count,active)
+    .mobile-nav__item(class=active)
+      a(href="#").mobile-nav__controller
+        .mobile-nav__controller-top
+          .mobile-nav__controller-icon
+            if count === ''
+            else
+              .mobile-nav__controller-count
+                span=count
+            i(class='icon-ic_'+icon)
+        .mobile-nav__controller-title=title
+  +controller('happy_home','Главная','','active')
+  +controller('menu','Каталог','')
+  +controller('cart','Корзина', 996)
+  +controller('favorite','Избранное', 6)
+  +controller('happy_profile','Профиль','')
