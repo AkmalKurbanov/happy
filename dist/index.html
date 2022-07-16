@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>main
+    </title>
+    <link rel="stylesheet" href="assets/styles.min.css">
+    <link link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <script src="assets/lottie.js"> </script>
+  </head>
+</html>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <header class="header">
+        <div class="header__top container"> 
+          <div class="header__col"><a class="logo" href="#"><img src="assets/img/logo.svg" alt=""></a></div>
+          <div class="header__col">
+            <form action="">
+              <div class="header__search">  
+                <input type="search" placeholder="Искать на happy">
+                <button class="submit" type="submit"><i class="icon-ic_search"> </i></button>
+                <div class="header__search-dropdown" style="display: none;"><a class="header__search-dropdown-result" href="#">macbook air m1</a><a class="header__search-dropdown-result" href="#">macbook air</a><a class="header__search-dropdown-result" href="#">macbook</a><a class="header__search-dropdown-result" href="#">macbook pro 16</a><a class="header__search-dropdown-result" href="#">macbook pro m1</a><a class="header__search-dropdown-result" href="#">macbook air m1</a><a class="header__search-dropdown-result" href="#">macbook air</a><a class="header__search-dropdown-result" href="#">macbook</a><a class="header__search-dropdown-result" href="#">macbook pro 16</a><a class="header__search-dropdown-result" href="#">macbook pro m1</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="header__col">
+            <div class="header__top-panel-controllers"><a class="header__controller header__controller--points" href="#">
+                <div class="header__controller-top">
+                  <div class="header__controller-count-points">0</div>
+                </div>
+                <div class="header__controller-title">Баллов</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-top">
+                                <div class="header__controller-icon"><i class="icon-ic_orders"></i>
+                                </div>
+                              </div>
+                              <div class="header__controller-title">Заказы</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-top">
+                                <div class="header__controller-icon">
+                                  <div class="header__controller-count"><span>2</span></div><i class="icon-ic_favorite"></i>
+                                </div>
+                              </div>
+                              <div class="header__controller-title">Избранное</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-top">
+                                <div class="header__controller-icon">
+                                  <div class="header__controller-count"><span>6</span></div><i class="icon-ic_cart"></i>
+                                </div>
+                              </div>
+                              <div class="header__controller-title">Корзина</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-top">
+                                <div class="header__controller-icon"><i class="icon-ic_happy_profile"></i>
+                                </div>
+                              </div>
+                              <div class="header__controller-title">Профиль</div></a>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom container">
+          <div class="header__catalog-trigger catalog-trigger-js"> <i class="icon-ic_menu"></i>Каталог товаров</div>
+          <div class="header__nav">
+            <div class="header__nav-trigger">...</div>
+            <ul>
+                            <li> <a href="#">Электроника</a></li>
+                            <li> <a href="#">Одежда</a></li>
+                            <li> <a href="#">Детям</a></li>
+                            <li> <a href="#">Красота</a></li>
+                            <li> <a href="#">Дом и сад</a></li>
+            </ul>
+            <ul class="toggle-fade">
+                            <li> <a href="#">Как заказать?</a></li>
+                            <li> <a href="#">Способы оплаты</a></li>
+                            <li> <a href="#">Доставка</a></li>
+                            <li> <a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div id="preloader"></div>
+      <div class="mobile-nav">
+        <div class="container">
+          <div class="mobile-nav__wrap">
+                        <div class="mobile-nav__item active"><a class="mobile-nav__controller" href="#">
+                            <div class="mobile-nav__controller-top">
+                              <div class="mobile-nav__controller-icon"><i class="icon-ic_happy_home"></i>
+                              </div>
+                            </div>
+                            <div class="mobile-nav__controller-title">Главная</div></a></div>
+                        <div class="mobile-nav__item catalog-trigger-js"><a class="mobile-nav__controller" href="#">
+                            <div class="mobile-nav__controller-top">
+                              <div class="mobile-nav__controller-icon"><i class="icon-ic_menu"></i>
+                              </div>
+                            </div>
+                            <div class="mobile-nav__controller-title">Каталог</div></a></div>
+                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                            <div class="mobile-nav__controller-top">
+                              <div class="mobile-nav__controller-icon">
+                                <div class="mobile-nav__controller-count"><span>996</span></div><i class="icon-ic_cart"></i>
+                              </div>
+                            </div>
+                            <div class="mobile-nav__controller-title">Корзина</div></a></div>
+                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                            <div class="mobile-nav__controller-top">
+                              <div class="mobile-nav__controller-icon">
+                                <div class="mobile-nav__controller-count"><span>6</span></div><i class="icon-ic_favorite"></i>
+                              </div>
+                            </div>
+                            <div class="mobile-nav__controller-title">Избранное</div></a></div>
+                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                            <div class="mobile-nav__controller-top">
+                              <div class="mobile-nav__controller-icon"><i class="icon-ic_happy_profile"></i>
+                              </div>
+                            </div>
+                            <div class="mobile-nav__controller-title">Профиль</div></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="catalog-menu">
+        <div class="catalog-menu__close">  <i class="icon-ic_close_fill"> </i></div>
+        <div class="title-wrap">
+          <h2 class="title">Каталог</h2>
+        </div>
+        <div class="catalog-menu__list"><a class="active catalog-menu__category" href="#">Электроника</a><a class="catalog-menu__category" href="#">Компьютеры</a><a class="catalog-menu__category" href="#">Бытовая техника</a><a class="catalog-menu__category" href="#">Одежда и обувь</a><a class="catalog-menu__category" href="#">Красота и гигиена</a><a class="catalog-menu__category" href="#">Детские товары</a><a class="catalog-menu__category" href="#">Дом</a><a class="catalog-menu__category" href="#">Дача и сад</a><a class="catalog-menu__category" href="#">Строительство и ремонт</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero">
+          <div class="swiper-container hero-slider">
+            <div class="swiper-wrapper">
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="tiles">
+          <div class="tiles__tile tiles__tile--full"></div>
+          <div class="tiles__tile tiles__tile--half"></div>
+          <div class="tiles__tile tiles__tile--half"></div>
+          <div class="tiles__tile tiles__tile--third"></div>
+          <div class="tiles__tile tiles__tile--third"></div>
+          <div class="tiles__tile tiles__tile--third"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <section class="section">
+        <div class="section__col">
+          <div class="title-wrap">
+            <h3 class="title">Лучшие новинки</h3><a class="more" href="#">Все <span>новинки</span></a>
+          </div>
+        </div>
+        <div class="section__col">
+          <div class="products">
+            <div class="swiper-container products-js">
+              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                            <div class="products__item-status products__item-status--hit">Хит</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/product1.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="discount-price">
+                                          <s class="irrelevant">14450сом</s><span class="discount">-<span data-val="9">9</span>%</span>
+                                        </div>
+                                        <div class="actual-price" data-val="14450"><span>14450</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Беспроводные наушники Apple AirPods 3, белый</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite products__item-favorite--added"></button><a class="products__item-img" href="#"><img src="assets/img/product2.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="actual-price" data-val="29400"><span>29400</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/product5.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="discount-price">
+                                          <s class="irrelevant">33614 сом</s><span class="discount">-<span data-val="33">33</span>%</span>
+                                        </div>
+                                        <div class="actual-price" data-val="33614 "><span>33614 </span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Беспроводные наушники Beats Solo Pro, бежевый</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="actual-price" data-val="12500"><span>12500</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Умная колонка JBL Link Music</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <div class="not-available">Нет в наличии</div>
+                                    </div>
+                                  </div>
+                                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="ribbon-wrap">
+      <div class="ribbon"></div>
+      <div class="ribbon"></div>
+    </div>
+    <div class="container">
+      <section class="section">
+        <div class="section__col">
+          <div class="title-wrap">
+            <h3 class="title">Хиты продаж</h3><a class="more" href="#">Все хиты</a>
+          </div>
+        </div>
+        <div class="section__col">
+          <div class="products">
+            <div class="swiper-container products-js">
+              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/product4.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="discount-price">
+                                          <s class="irrelevant">299990сом</s><span class="discount">-<span data-val="40">40</span>%</span>
+                                        </div>
+                                        <div class="actual-price" data-val="299990"><span>299990</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">16.2&quot; Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--hit">Хит</div>
+                                            <div class="products__item-status products__item-status--cashback">Кэшбек x2</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/product5.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="discount-price">
+                                          <s class="irrelevant">13570сом</s><span class="discount">-<span data-val="18">18</span>%</span>
+                                        </div>
+                                        <div class="actual-price" data-val="13570"><span>13570</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Умная колонка Apple HomePod mini, белый</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                            <div class="products__item-status products__item-status--hit">Хит</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img src="assets/img/product1.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="discount-price">
+                                          <s class="irrelevant">14450сом</s><span class="discount">-<span data-val="9">9</span>%</span>
+                                        </div>
+                                        <div class="actual-price" data-val="14450"><span>14450</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Беспроводные наушники Apple AirPods 3, белый</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="products__item">
+                                    <div>
+                                      <div class="products__item-top">
+                                        <div class="products__item-top-elements">
+                                          <div>
+                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                          </div>
+                                        </div>
+                                        <button class="products__item-favorite products__item-favorite--added"></button><a class="products__item-img" href="#"><img src="assets/img/product2.webp" alt="" onerror="this.src = 'assets/img/default-img.png'"></a>
+                                      </div>
+                                      <div class="products__item-price">
+                                        <div class="actual-price" data-val="29400"><span>29400</span>сом</div>
+                                      </div>
+                                      <div class="products__item-desc">Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический</div>
+                                    </div>
+                                    <div class="products__item-btn">
+                                      <button class="add-to-basket">В корзину</button>
+                                      <div class="products__item-counter">
+                                        <div class="products__item-counter-trash"><i class="icon-ic_trash"></i></div>
+                                        <input class="count-minus" type="button" value="-"><span>
+                                          <input class="counter" type="number" value="0">шт.</span>
+                                        <input class="count-plus" type="button" value="+">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section class="section">
+        <div class="section__col">
+          <div class="title-wrap">
+            <h3 class="title">Бренды</h3>
+          </div>
+        </div>
+        <div class="section__col">
+          <div class="brands"><a class="brands__brand" href="#"><img src="assets/img/brand1.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand2.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand3.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand4.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand5.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand5.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand4.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand3.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand2.webp" alt=""></a><a class="brands__brand" href="#"><img src="assets/img/brand1.webp" alt=""></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__col-wrap"> 
+            <div class="footer__col">
+              <div class="footer__title">Заказывайте в новом приложении Happy и <a href="#">получайте бонусы </a></div>
+              <div class="footer__app-link-block"><a class="footer__app-link" href="#"><img src="assets/img/googleplay.webp" alt=""></a><a class="footer__app-link" href="#"><img src="assets/img/appstore.webp" alt=""></a></div>
+            </div>
+            <div class="footer__col">
+              <div class="footer__phone-illustartion"> <img src="assets/img/apple1.webp" alt=""><img src="assets/img/apple2.webp" alt=""><img class="sm" src="assets/img/apple3.webp" alt=""></div>
+              <div class="footer__qr"> 
+                <div class="footer__explanation">Наведите камеру на QR, чтобы скачать<span>
+                    <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.97265 0.767725C1.84437 0.230545 1.30491 -0.100932 0.767725 0.0273498C0.230545 0.155632 -0.100932 0.695095 0.0273498 1.23227L1.97265 0.767725ZM33.7071 25.7071C34.0976 25.3166 34.0976 24.6834 33.7071 24.2929L27.3431 17.9289C26.9526 17.5384 26.3195 17.5384 25.9289 17.9289C25.5384 18.3195 25.5384 18.9526 25.9289 19.3431L31.5858 25L25.9289 30.6569C25.5384 31.0474 25.5384 31.6805 25.9289 32.0711C26.3195 32.4616 26.9526 32.4616 27.3431 32.0711L33.7071 25.7071ZM0.0273498 1.23227C2.00166 9.49969 11.3576 26 33 26V24C12.6125 24 3.81924 8.50031 1.97265 0.767725L0.0273498 1.23227Z" fill="#FC5230"></path>
+                    </svg></span></div>
+                <div class="footer__qr-code"><img src="assets/img/qr.webp" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__middle">
+        <div class="container">
+          <div class="footer__col-wrap"> 
+            <div class="footer__col">
+              <div class="footer__title">Happy KG</div>
+              <p>Компания «Happy KG» – ведущая национальная сеть магазинов электробытовой и компьютерной техники.</p>
+            </div>
+            <div class="footer__col">
+              <div class="footer__title">Покупателям</div>
+              <ul> 
+                                <li> <a href="#">Способы оплаты</a></li>
+                                <li> <a href="#">Кредит и рассрочка</a></li>
+                                <li> <a href="#">Доставка</a></li>
+                                <li> <a href="#">Гарантия на товар</a></li>
+                                <li> <a href="#">Обмен и возврат</a></li>
+                                <li> <a href="#">Обратная связь</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <div class="footer__title">О нас</div>
+              <ul> 
+                                <li> <a href="#">Кто мы?</a></li>
+                                <li> <a href="#">Контакты</a></li>
+                                <li> <a href="#">Сотрудничество</a></li>
+                                <li> <a href="#">Условия пользования</a></li>
+                                <li> <a href="#">Политика конфиденциальности</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <div class="footer__title">Контакты</div>
+              <p>ОсОО “Happy KG”, г. Бишкек, ул. Суюмбаева, 140/2</p>
+              <ul>
+                                <li> <a href="#">+996 (777) 123456</a></li>
+                                <li> <a href="#">+996 (500) 123456</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"> 
+        <div class="container"> 
+          <div class="footer__col-wrap"> 
+            <div class="footer__col"> 
+              <div class="copyright"> 
+                <p>© 1998 – 2022 ОсОО «Happy KG». Все права защищены.</p>
+              </div>
+            </div>
+            <div class="footer__col"> 
+              <div class="social">
+                <ul> 
+                                    <li> <a href="#"><i class="icon-sl_whatsapp"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_instagram"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_tiktok"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_facebook"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_youtube"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_twitter"> </i></a></li>
+                                    <li> <a href="#"><i class="icon-sl_linkedin"> </i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/scripts.min.js"></script>
+</body>

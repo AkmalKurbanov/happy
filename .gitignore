@@ -1,6 +1,5 @@
 node_modules
 .idea
-dist 
 dist/includes
 dist/layout
 dist/assets/data.json
