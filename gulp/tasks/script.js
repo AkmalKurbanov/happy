@@ -14,6 +14,8 @@ module.exports = function script() {
   return gulp.src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/swiper/swiper-bundle.min.js',
+      'node_modules/easyzoom/dist/easyzoom.js',
+      'node_modules/mmenu-js/dist/mmenu.js',
       'src/js/scripts/*.js'
     ])
     // подключение библиотек

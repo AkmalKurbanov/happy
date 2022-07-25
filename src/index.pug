@@ -48,14 +48,14 @@ block main
                             div
                               if newProd === 'newprod-none'
                               else
-                                .products__item-status.products__item-status--new=newProd
+                                .products__item-status.products__item-status--br_tertiary_2=newProd
                               if hit === 'hit-none'
                               else
-                                .products__item-status.products__item-status--hit=hit
+                                .products__item-status.products__item-status--br_secondary_2=hit
                               
                               if cashback === 'cashback-none'
                               else
-                                .products__item-status.products__item-status--cashback=cashback
+                                .products__item-status.products__item-status--br_primary_1=cashback
                           if favorite === 'favorite-none'
                             button.products__item-favorite
                           else    
@@ -135,5 +135,5 @@ block main
               
     include includes/footer/footer
   
-  script(src="assets/lazyload.min.js") 
+  
   include includes/scripts

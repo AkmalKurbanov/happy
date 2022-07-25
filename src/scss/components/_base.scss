@@ -41,10 +41,32 @@ a {
 }
 
 img {
-  width: 100%;
-  max-width: 100%;
   display: block;
   background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);
+  width: 100%;
+}
+
+.easyzoom-flyout {
+  width: 500px !important;
+  height: 500px !important;
+  border: rem(1) solid $br_primary_2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  top: 50% !important;
+  transform: translateY(-30%);
+  z-index: 9;
+
+  @include md {
+    width: rem(350) !important;
+    height: rem(300) !important;
+  }
+
+  @include sm {
+    display: none;
+  }
+
+  img {
+    width: auto !important;
+  }
 }
 
 ul {
@@ -61,6 +83,36 @@ button {
   outline: none;
   border: none;
   background: transparent;
+}
+
+.btn {
+  border-radius: rem(20);
+  min-height: rem(40);
+  color: $neu_primary_6;
+  @include medium_14;
+  @include aic-jcc;
+  width: 100%;
+  outline: none;
+  transition: $tr;
+  cursor: pointer;
+
+  &--br_primary_2 {
+    background-color: $br_primary_2;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: $br_primary_3;
+    }
+  }
+
+  &--br_secondary_2 {
+    background-color: $br_secondary_2;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: $br_secondary_3;
+    }
+  }
 }
 
 // flex footer
@@ -87,7 +139,7 @@ button {
   padding-left: rem(15px);
   margin-right: auto;
   margin-left: auto;
-  max-width: rem(1280px);
+  max-width: rem(1230px);
   position: relative;
   box-sizing: border-box;
 
@@ -110,6 +162,14 @@ button {
 
 
 // container end
+
+
+
+
+
+
+
+
 
 form {
   width: 100%;
@@ -246,5 +306,66 @@ form {
       }
     }
 
+  }
+}
+
+.close-btn {
+  width: rem(26);
+  height: rem(26);
+  @include aic-jcc;
+  cursor: pointer;
+  position: absolute;
+  top: rem(15);
+  right: rem(15);
+  z-index: 99;
+
+  &:before {
+    position: absolute;
+    content: '\e80a';
+    font-family: icon;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: rem(30);
+  }
+}
+
+.slide-panel {
+  max-width: rem(375);
+  width: 100%;
+  background-color: $br_primary_4;
+  padding: rem(40) rem(15);
+  position: fixed;
+  top: 0;
+  transition: $tr;
+  height: 100%;
+  z-index: 10;
+
+  &--right {
+    right: -100%;
+
+    &.open {
+      right: 0;
+    }
+  }
+
+  &--left {
+    left: -100%;
+
+    &.open {
+      left: 0;
+    }
+  }
+}
+
+.empty {
+  @include aic-jcc-fdc;
+  text-align: center;
+  height: 100%;
+  h2 {
+    margin-bottom: rem(15);
+  }
+  p{
+    color: $neu_primary_2;
   }
 }

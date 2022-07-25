@@ -4,6 +4,11 @@
   justify-content: space-between;
 }
 
+.aic-jfcsb {
+  @include aic-jfcsb;
+}
+
+
 @mixin aife-jfcsb {
   display: flex;
   align-items: flex-end;
@@ -34,6 +39,10 @@
 @mixin aic {
   display: flex;
   align-items: center;
+}
+
+.aic {
+  @include aic;
 }
 
 @mixin aife-jfcfe {
@@ -79,6 +88,7 @@
   display: flex;
   align-items: flex-start;
 }
+
 @mixin aifs-jcc {
   display: flex;
   align-items: flex-start;
@@ -151,4 +161,20 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+
+.br_tertiary_2 {
+  background: $br_tertiary_2;
+  color: $br_primary_1;
+}
+
+.br_secondary_2 {
+  background-color: $br_secondary_2;
+  color: $br_tertiary_2;
+}
+
+.br_primary_1 {
+  background-color: $br_primary_1;
+  color: $br_tertiary_2;
 }

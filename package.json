@@ -4,7 +4,9 @@
   "description": "Project",
   "main": "index.js",
   "dependencies": {
+    "easyzoom": "^2.5.2",
     "jquery": "^3.4.1",
+    "mmenu-js": "^9.1.6",
     "normalize.css": "^8.0.1",
     "swiper": "6.8.0"
   },

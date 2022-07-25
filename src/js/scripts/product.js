@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.products__item').each(function (index) {
+  $('.products__item, .product-detail__price-block').each(function (index) {
     let price = Number($.trim($(this).find('.actual-price').attr('data-val')));
     let percent = Number($.trim($(this).find('.discount span').attr('data-val')));
     let percentSum = (price * percent / 100);

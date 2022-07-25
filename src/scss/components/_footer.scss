@@ -47,6 +47,7 @@
       &:first-child {
         @include xs {
           @include fdc-jfcsb;
+          width: 60%;
         }
       }
 
@@ -54,6 +55,14 @@
         padding: 0;
         display: flex;
         flex-direction: row;
+
+        @include xs {
+          width: 40%;
+
+          img {
+            float: right;
+          }
+        }
       }
 
     }
@@ -109,6 +118,10 @@
       width: rem(200);
     }
 
+    @include xs {
+      @include aife-jfcfe;
+    }
+
     img {
       max-width: 50%;
       width: 100%;
@@ -133,6 +146,7 @@
       max-width: 100%;
       bottom: 0;
       min-width: rem(120);
+      max-width: rem(155);
 
       @include sm {
         display: block;

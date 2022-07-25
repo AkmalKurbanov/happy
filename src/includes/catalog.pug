@@ -1,12 +1,32 @@
-.catalog-menu
-  .catalog-menu__close   
-    i.icon-ic_close_fill 
-  .title-wrap
-    h2.title Каталог
-  .catalog-menu__list
-    mixin category(item,active)
-      a(href="#" class=active).catalog-menu__category=item  
-    +category('Электроника','active')
+#catalog-menu
+  ul
+    li 
+      span Электроника
+      ul
+        mixin subcategory(subcategory)
+          li
+            a(href='#/')=subcategory
+        +subcategory('Компьютеры')
+        +subcategory('Бытовая техника')
+        +subcategory('Одежда и обувь')
+        +subcategory('Красота и гигиена')
+        +subcategory('Детские товары')
+        +subcategory('Дом')
+        +subcategory('Дача и сад')
+        +subcategory('Строительство и ремонт')
+      
+    li 
+      span Компьютеры
+      ul
+        +subcategory('Красота и гигиена')
+        +subcategory('Детские товары')
+        +subcategory('Дом')
+        +subcategory('Дача и сад')
+        +subcategory('Строительство и ремонт')
+      
+    mixin category(category)
+      li
+        a(href='#/')=category 
     +category('Компьютеры')
     +category('Бытовая техника')
     +category('Одежда и обувь')
@@ -15,3 +35,5 @@
     +category('Дом')
     +category('Дача и сад')
     +category('Строительство и ремонт')
+
+  

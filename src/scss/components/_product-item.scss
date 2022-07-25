@@ -68,10 +68,11 @@
     @include aic-jcc;
     background-color: $neu_primary_6;
     position: relative;
+
     img {
       max-height: 100%;
       max-width: 100%;
-      object-fit: contain;     
+      object-fit: contain;
     }
   }
 
@@ -83,29 +84,64 @@
     margin-right: rem(4);
     padding: rem(2) rem(6);
     min-height: rem(20);
+    position: relative;
+    cursor: default;
+
 
     &:last-child {
       margin-right: 0;
     }
 
-    &--new {
+    &--br_tertiary_2 {
       background: $br_tertiary_2;
       color: $br_primary_1;
     }
 
-    &--hit {
+    &--br_secondary_2 {
       background-color: $br_secondary_2;
       color: $br_tertiary_2;
     }
 
-    &--cashback {
+    &--br_primary_1 {
       background-color: $br_primary_1;
       color: $br_tertiary_2;
     }
   }
 
+  &__item-status-dropdown {
+    background-color: $neu_primary_6;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: rem(10);
+    padding: rem(12);
+    position: absolute;
+    top: rem(-10);
+    left: 0;
+    min-width: rem(225);
+    transition: $tr;
+    opacity: 0;
+    pointer-events: none;
+
+    &.open {
+      display: block;
+      top: calc(100% + 10px);
+      opacity: 1;
+      pointer-events: inherit;
+    }
+
+    p {
+      color: $neu_primary_2;
+      margin-bottom: rem(12);
+    }
+
+    a {
+      color: $br_secondary_2;
+    }
+  }
+
+
+
   &__item-favorite {
-    width: rem(32);
+    min-width: rem(32);
     height: rem(32);
     @include aic-jcc;
     background-color: $neu_primary_6;
@@ -326,4 +362,6 @@
       transition: $tr;
     }
   }
+
+ 
 }

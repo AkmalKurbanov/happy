@@ -10,11 +10,19 @@
   letter-spacing: -2%;
 }
 
+.semibold_40 {
+  @include semibold_40;
+}
+
 @mixin semibold_28 {
   font-weight: 600;
   font-size: 28px;
   line-height: 32px;
   letter-spacing: -2%;
+}
+
+.semibold_28 {
+  @include semibold_28;
 }
 
 @mixin semibold_24 {
@@ -24,11 +32,19 @@
   letter-spacing: -2%;
 }
 
+.semibold_24 {
+  @include semibold_24;
+}
+
 @mixin semibold_20 {
   font-weight: 600;
   font-size: 20px;
   line-height: 22px;
   letter-spacing: -2%;
+}
+
+.semibold_20 {
+  @include semibold_20;
 }
 
 @mixin semibold_18 {
@@ -38,11 +54,20 @@
   letter-spacing: -2%;
 }
 
+.semibold_18 {
+  @include semibold_18;
+}
+
+
 @mixin regular_16 {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
+}
+
+.regular_16 {
+  @include regular_16;
 }
 
 @mixin medium_16 {
@@ -52,6 +77,10 @@
   letter-spacing: 0%;
 }
 
+.medium_16 {
+  @include medium_16;
+}
+
 @mixin semibold_16 {
   font-weight: 600;
   font-size: 16px;
@@ -59,11 +88,20 @@
   letter-spacing: 2%;
 }
 
+.semibold_16 {
+  @include semibold_16;
+}
+
+
 @mixin regular_14 {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
+}
+
+.regular_14 {
+  @include regular_14;
 }
 
 @mixin crossed_14 {
@@ -73,11 +111,19 @@
   letter-spacing: 0%;
 }
 
+.crossed_14 {
+  @include crossed_14;
+}
+
 @mixin medium_14 {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
+}
+
+.medium_14 {
+  @include medium_14;
 }
 
 @mixin semibold_14 {
@@ -86,39 +132,87 @@
   line-height: 20px;
   letter-spacing: -2%;
 }
+
+.semibold_14 {
+  @include semibold_14;
+}
+
 @mixin regular_12 {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0%;
 }
+
+.regular_12 {
+  @include regular_12;
+}
+
+
 @mixin crossed_12 {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0%;
 }
+
+.crossed_12 {
+  @include crossed_12;
+}
+
 @mixin medium_12 {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0%;
 }
+
+.medium_12 {
+  @include medium_12;
+}
+
+
 @mixin semibold_12 {
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0%;
 }
+
+.semibold_12 {
+  @include semibold_12;
+}
+
 @mixin regular_10 {
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
   letter-spacing: 0%;
 }
+
+.regular_10 {
+  @include regular_10;
+}
+
 @mixin medium_10 {
   font-weight: 500;
   font-size: 10px;
   line-height: 14px;
   letter-spacing: 0%;
 }
+
+.medium_10 {
+  @include medium_10;
+}
+
+
+
+
+
+
+
+
+
+
+
+

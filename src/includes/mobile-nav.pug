@@ -1,9 +1,9 @@
 .mobile-nav
   .container
     .mobile-nav__wrap
-      mixin controller(icon,title,count,modify)
+      mixin controller(icon,title,count,modify,link)
         .mobile-nav__item(class=modify)
-          a(href="#").mobile-nav__controller
+          a(href=link).mobile-nav__controller
             .mobile-nav__controller-top
               .mobile-nav__controller-icon
                 if count === ''
@@ -13,7 +13,7 @@
                 i(class='icon-ic_'+icon)
             .mobile-nav__controller-title=title
       +controller('happy_home','Главная','','active')
-      +controller('menu','Каталог','','catalog-trigger-js')
-      +controller('cart','Корзина', 996)
+      +controller('menu','Каталог','','catalog-trigger-js','#catalog-menu')
+      +controller('cart','Корзина', 996,'basket-js')
       +controller('favorite','Избранное', 6)
       +controller('happy_profile','Профиль','')

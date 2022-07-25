@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,7 @@
                                   <div class="header__controller-count"><span>2</span></div><i class="icon-ic_favorite"></i>
                                 </div>
                               </div>
-                              <div class="header__controller-title">Избранное</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-title">Избранное</div></a><a class="basket-js header__controller" href="#">
                               <div class="header__controller-top">
                                 <div class="header__controller-icon">
                                   <div class="header__controller-count"><span>6</span></div><i class="icon-ic_cart"></i>
@@ -61,8 +61,7 @@
             </div>
           </div>
         </div>
-        <div class="header__bottom container">
-          <div class="header__catalog-trigger catalog-trigger-js"> <i class="icon-ic_menu"></i>Каталог товаров</div>
+        <div class="header__bottom container"><a class="header__catalog-trigger catalog-trigger-js" href="#catalog-menu"><i class="icon-ic_menu"></i>Каталог товаров</a>
           <div class="header__nav">
             <div class="header__nav-trigger">...</div>
             <ul>
@@ -85,33 +84,33 @@
       <div class="mobile-nav">
         <div class="container">
           <div class="mobile-nav__wrap">
-                        <div class="mobile-nav__item active"><a class="mobile-nav__controller" href="#">
+                        <div class="mobile-nav__item active"><a class="mobile-nav__controller">
                             <div class="mobile-nav__controller-top">
                               <div class="mobile-nav__controller-icon"><i class="icon-ic_happy_home"></i>
                               </div>
                             </div>
                             <div class="mobile-nav__controller-title">Главная</div></a></div>
-                        <div class="mobile-nav__item catalog-trigger-js"><a class="mobile-nav__controller" href="#">
+                        <div class="mobile-nav__item catalog-trigger-js"><a class="mobile-nav__controller" href="#catalog-menu">
                             <div class="mobile-nav__controller-top">
                               <div class="mobile-nav__controller-icon"><i class="icon-ic_menu"></i>
                               </div>
                             </div>
                             <div class="mobile-nav__controller-title">Каталог</div></a></div>
-                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                        <div class="mobile-nav__item basket-js"><a class="mobile-nav__controller">
                             <div class="mobile-nav__controller-top">
                               <div class="mobile-nav__controller-icon">
                                 <div class="mobile-nav__controller-count"><span>996</span></div><i class="icon-ic_cart"></i>
                               </div>
                             </div>
                             <div class="mobile-nav__controller-title">Корзина</div></a></div>
-                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                        <div class="mobile-nav__item"><a class="mobile-nav__controller">
                             <div class="mobile-nav__controller-top">
                               <div class="mobile-nav__controller-icon">
                                 <div class="mobile-nav__controller-count"><span>6</span></div><i class="icon-ic_favorite"></i>
                               </div>
                             </div>
                             <div class="mobile-nav__controller-title">Избранное</div></a></div>
-                        <div class="mobile-nav__item"><a class="mobile-nav__controller" href="#">
+                        <div class="mobile-nav__item"><a class="mobile-nav__controller">
                             <div class="mobile-nav__controller-top">
                               <div class="mobile-nav__controller-icon"><i class="icon-ic_happy_profile"></i>
                               </div>
@@ -120,13 +119,38 @@
           </div>
         </div>
       </div>
-      <div class="catalog-menu">
-        <div class="catalog-menu__close">  <i class="icon-ic_close_fill"> </i></div>
-        <div class="title-wrap">
-          <h2 class="title">Каталог</h2>
-        </div>
-        <div class="catalog-menu__list"><a class="active catalog-menu__category" href="#">Электроника</a><a class="catalog-menu__category" href="#">Компьютеры</a><a class="catalog-menu__category" href="#">Бытовая техника</a><a class="catalog-menu__category" href="#">Одежда и обувь</a><a class="catalog-menu__category" href="#">Красота и гигиена</a><a class="catalog-menu__category" href="#">Детские товары</a><a class="catalog-menu__category" href="#">Дом</a><a class="catalog-menu__category" href="#">Дача и сад</a><a class="catalog-menu__category" href="#">Строительство и ремонт</a>
-        </div>
+      <div id="catalog-menu">
+        <ul>
+          <li> <span>Электроника</span>
+            <ul>
+                            <li><a href="#/">Компьютеры</a></li>
+                            <li><a href="#/">Бытовая техника</a></li>
+                            <li><a href="#/">Одежда и обувь</a></li>
+                            <li><a href="#/">Красота и гигиена</a></li>
+                            <li><a href="#/">Детские товары</a></li>
+                            <li><a href="#/">Дом</a></li>
+                            <li><a href="#/">Дача и сад</a></li>
+                            <li><a href="#/">Строительство и ремонт</a></li>
+            </ul>
+          </li>
+          <li> <span>Компьютеры</span>
+            <ul>
+                            <li><a href="#/">Красота и гигиена</a></li>
+                            <li><a href="#/">Детские товары</a></li>
+                            <li><a href="#/">Дом</a></li>
+                            <li><a href="#/">Дача и сад</a></li>
+                            <li><a href="#/">Строительство и ремонт</a></li>
+            </ul>
+          </li>
+                    <li><a href="#/">Компьютеры</a></li>
+                    <li><a href="#/">Бытовая техника</a></li>
+                    <li><a href="#/">Одежда и обувь</a></li>
+                    <li><a href="#/">Красота и гигиена</a></li>
+                    <li><a href="#/">Детские товары</a></li>
+                    <li><a href="#/">Дом</a></li>
+                    <li><a href="#/">Дача и сад</a></li>
+                    <li><a href="#/">Строительство и ремонт</a></li>
+        </ul>
       </div>
       <div class="container">
         <div class="hero">
@@ -168,8 +192,8 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--new">Новинка</div>
-                                            <div class="products__item-status products__item-status--hit">Хит</div>
+                                            <div class="products__item-status products__item-status--br_tertiary_2">Новинка</div>
+                                            <div class="products__item-status products__item-status--br_secondary_2">Хит</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product1.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>
@@ -199,7 +223,7 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                            <div class="products__item-status products__item-status--br_tertiary_2">Новинка</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite products__item-favorite--added"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product2.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>
@@ -226,7 +250,7 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                            <div class="products__item-status products__item-status--br_tertiary_2">Новинка</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product5.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>
@@ -326,8 +350,8 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--hit">Хит</div>
-                                            <div class="products__item-status products__item-status--cashback">Кэшбек x2</div>
+                                            <div class="products__item-status products__item-status--br_secondary_2">Хит</div>
+                                            <div class="products__item-status products__item-status--br_primary_1">Кэшбек x2</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product5.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>
@@ -357,8 +381,8 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--new">Новинка</div>
-                                            <div class="products__item-status products__item-status--hit">Хит</div>
+                                            <div class="products__item-status products__item-status--br_tertiary_2">Новинка</div>
+                                            <div class="products__item-status products__item-status--br_secondary_2">Хит</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product1.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>
@@ -388,7 +412,7 @@
                                       <div class="products__item-top">
                                         <div class="products__item-top-elements">
                                           <div>
-                                            <div class="products__item-status products__item-status--new">Новинка</div>
+                                            <div class="products__item-status products__item-status--br_tertiary_2">Новинка</div>
                                           </div>
                                         </div>
                                         <button class="products__item-favorite products__item-favorite--added"></button><a class="products__item-img" href="#"><img class="lazy" src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/product2.webp" onerror="this.src='assets/img/default-img.png'" alt=""></a>

@@ -1,0 +1,384 @@
+extends layout/main/main
+block title
+  | product detail
+block main
+  .wrapper    
+    include includes/cart
+    .content
+      include includes/header/header
+      .product-detail
+        .container
+          .product-detail__wrap
+            .product-detail__col
+              .product-detail__img-gallery
+                .product-detail__gallery-thumbs.thumbnails
+                  mixin thumb(thumb,zoom,standard,active)
+                    .product-detail__thumb
+                      a(href='assets/img/'+zoom data-standard='assets/img/'+standard class=active)
+                        img(src='assets/img/'+thumb alt='')
+                  +thumb('thumb1.webp','zoom1.webp','standart1.webp','active')
+                  +thumb('thumb2.webp','zoom2.webp','standart2.webp')
+                  +thumb('thumb3.webp','zoom3.webp','standart3.webp')
+                  +thumb('thumb4.webp','zoom4.webp','standart4.webp')
+                  +thumb('thumb1.webp','zoom1.webp','standart1.webp')
+                  +thumb('thumb2.webp','zoom2.webp','standart2.webp')
+                  +thumb('thumb3.webp','zoom3.webp','standart3.webp')
+                  +thumb('thumb4.webp','zoom4.webp','standart4.webp')
+                  +thumb('thumb1.webp','zoom1.webp','standart1.webp')
+                  +thumb('thumb2.webp','zoom2.webp','standart2.webp')
+                  +thumb('thumb3.webp','zoom3.webp','standart3.webp')
+                  +thumb('thumb4.webp','zoom4.webp','standart4.webp')
+                .product-detail__gallery-main-img
+                  .easyzoom.easyzoom--adjacent.easyzoom--with-thumbnails
+                    a(href='assets/img/zoom1.webp')
+                      img(src='assets/img/standart1.webp' alt='' class="standart")
+            .product-detail__col
+              .product-detail__info 
+                .product-detail__section 
+                  .product-detail__tags 
+                    mixin tag(tag)
+                      a(href="#").product-detail__tag=tag
+                    +tag('Электроника')   
+                    +tag('Apple') 
+                  .product-detail__name.semibold_18 16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос 
+                  .product-detail__status 
+                    .products__item-status.products__item-status--br_primary_1 Кэшбек x2
+                      .products__item-status-dropdown
+                        p.regular_12 Удвоенный кэшбек при покупке данного товара!
+                        a(href="#") Подробнее
+                    .products__item-status.products__item-status--br_secondary_2 Хит
+                .product-detail__section 
+                  .product-detail__appearance
+                    .product-detail__appearance-title Цвет товара:
+                      span Серый космос
+                    .product-detail__colors
+                      mixin color(color,colorName,active)
+                        .product-detail__color-wrap(class=active title=colorName)
+                          .product-detail__color(style=`background-color:#${color}`)
+                      +color('7C7C7C','Серый космос','active')    
+                      +color('DFDFDF','Серый космос')
+                    .product-detail__appearance-title.regular_14 Размер: 256GB 
+                    .product-detail__sizes
+                      mixin size(size,active)      
+                        .product-detail__size(class=active).regular_14=size     
+                      +size('512GB','active')
+                      +size('1TB')
+                .product-detail__section 
+                  .product-detail__description 
+                    .product-detail__title.semibold_16 Описание
+                    p Apple MacBook Pro 16 (2021) — самый мощный MacBook Pro в истории, который базируется на высокотехнологичном чипе M1 Pro. Пропускная способность памяти составляет более 400 ГБ/с, а еще есть возможность подключения четырех мониторов. MacBook Pro 16 (2021) оснащен превосходным дисплеем Liquid Retina XDR с экстремальным динамическим диапазоном и высочайшей контрастностью.     
+                    .product-detail__description-more.medium_12 
+                      span.show Показать всё
+                .product-detail__section 
+                  .product-detail__title.semibold_16 Характеристики
+                  .product-detail__characterization
+                    mixin characterization(title,value)       
+                      .product-detail__characterization-item
+                        span!=title
+                        span=value
+                    +characterization('Тип','Ноутбук')  
+                    +characterization('ОС','MacOS')  
+                    +characterization('Процессор','Apple M1 Pro')  
+                    +characterization('Количество ядер <br> процессора','10')  
+                    +characterization('Чипсет','Apple SoC')  
+                    +characterization('Память','16GB')  
+                    +characterization('Экран','16.2 дюймов, 3456×2234')  
+            .product-detail__col
+              .product-detail__price-block
+                .products__item-price
+                  .discount-price
+                    s.irrelevant 229990сом
+                    span.discount
+                      | -
+                      span(data-val='40') 40
+                      | %
+                  .actual-price(data-val='229990')
+                    span 
+                    | сом
+                br
+                .aic-jfcsb   
+                  .products__item-btn
+                    button.add-to-basket В корзину
+                    .products__item-counter
+                      .products__item-counter-trash
+                        i.icon-ic_trash
+                      input.count-minus(type='button' value='-')
+                      span
+                        input.counter(type='number' value='0')
+                        | шт.
+                      input.count-plus(type='button' value='+')
+                  button.products__item-favorite
+                br 
+                button.btn.btn--br_secondary_2 Купить сейчас
+                
+              .product-detail__price-block
+                .products__item-price
+                  .discount-price
+                    s.irrelevant 229990сом
+                    span.discount
+                      | -
+                      span(data-val='40') 40
+                      | %
+                  .actual-price(data-val='229990')
+                    span 
+                    | сом
+                br
+                .aic-jfcsb   
+                  .products__item-btn
+                    .products__item-btn
+                      .not-available Нет в наличии
+                  button.products__item-favorite
+                
+              .product-detail__price-block
+                .product-detail__credit  
+                  .product-detail__credit-top 
+                    div
+                      .semibold_16 8900 сом сегодня
+                      .regular_12 Общая переплата: 1143 сом
+                    button.btn.btn--br_primary_2 Оформить 
+                    
+                  .tab
+                    .tab-wrap
+                      ul.tabs
+                        li
+                          a(href='#') 3 мес
+                        li
+                          a(href='#') 6 мес
+                        li
+                          a(href='#') 9 мес
+                        li
+                          a(href='#') 12 мес
+                        span.runner
+                    .tab_content
+                      mixin tab(modify)
+                        .tabs_item
+                          if modify === ''
+                            .product-detail__credit-content
+                              mixin item(date,sum,active)
+                                .product-detail__credit-item(class=active)
+                                  .product-detail__credit-date=date 
+                                  .product-detail__credit-sum=sum   
+                              +item('Сегодня','8900 сом','active')
+                              +item('11 авг','8900 сом')
+                              +item('11 сен','8900 сом')
+                              +item('11 окт','8900 сом')
+                              +item('11 ноя','8900 сом')
+                              +item('11 дек','8900 сом')
+                            .product-detail__credit-bank.aic-jfcsb 
+                              .aic
+                                .product-detail__credit-bank-logo 
+                                  img(src="assets/img/bank.png", alt="")
+                                .product-detail__credit-bank-name Бакай банк
+                              .product-detail__credit-bank-more Подробнее 
+                               
+
+                          else   
+                            .product-detail__credit-content(class="product-detail__credit-content--"+modify)
+                              mixin item(date,sum,active)
+                                .product-detail__credit-item(class=active)
+                                  .product-detail__credit-date=date 
+                                  .product-detail__credit-sum=sum   
+                              +item('Сегодня','8900 сом','active')
+                              +item('11 авг','8900 сом')
+                              +item('11 сен','8900 сом')
+                              +item('11 окт','8900 сом')
+                           
+                            .product-detail__credit-bank.aic-jfcsb
+                              .aic
+                                .product-detail__credit-bank-logo 
+                                  img(src="assets/img/bank.png", alt="")
+                                .product-detail__credit-bank-name Бакай банк
+                              .product-detail__credit-bank-more Подробнее 
+                               
+
+                      +tab('')
+                      +tab('')  
+                      +tab('')  
+                      +tab('') 
+                      
+
+
+              .product-detail__price-block
+                .product-detail__credit  
+                  .product-detail__credit-top 
+                    div
+                      .semibold_16 8900 сом сегодня
+                      .regular_12 Общая переплата: 1143 сом
+                    button.btn.btn--br_primary_2 Оформить 
+                  .tab
+                    .tab-wrap
+                      ul.tabs
+                        li
+                          a(href='#') 3 мес
+                        li
+                          a(href='#') 6 мес
+                        li
+                          a(href='#') 9 мес
+                        li
+                          a(href='#') 12 мес
+                        span.runner
+                    .tab_content
+                      +tab('secondary-format')
+                      +tab('secondary-format')
+                      +tab('secondary-format')
+                      +tab('secondary-format')
+
+        .product-detail__popup-img
+          .container
+            .close-btn              
+            .product-detail__img-gallery
+              .product-detail__gallery-thumbs.thumbnails
+                mixin thumb(thumb,zoom,standard,active)
+                  .product-detail__thumb
+                    a(href='assets/img/'+zoom data-standard='assets/img/'+standard class=active)
+                      img(src='assets/img/'+thumb alt='')
+                +thumb('thumb1.webp','zoom1.webp','standart1.webp','active')
+                +thumb('thumb2.webp','zoom2.webp','standart2.webp')
+                +thumb('thumb3.webp','zoom3.webp','standart3.webp')
+                +thumb('thumb4.webp','zoom4.webp','standart4.webp')
+                +thumb('thumb1.webp','zoom1.webp','standart1.webp')
+                +thumb('thumb2.webp','zoom2.webp','standart2.webp')
+                +thumb('thumb3.webp','zoom3.webp','standart3.webp')
+                +thumb('thumb4.webp','zoom4.webp','standart4.webp')
+              .product-detail__gallery-main-img
+                .easyzoom
+                  a(href='assets/img/zoom1.webp')
+                    img(src='assets/img/standart1.webp' alt='' class="standart")
+
+        .product-detail__popup-desc#product-desc
+          .close-btn
+          .container
+            .product-detail__popup-desc-header
+              .product-detail__popup-header-img
+                img(src="assets/img/product4.webp", alt="")
+              .product-detail__popup-header-title 16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос
+
+            .product-detail__popup-desc-desc
+              h2.semibold_16 Суперсила профессионалов.
+              br
+              p.regular_16 Apple MacBook Pro 16 (2021) — самый мощный MacBook Pro в истории, который базируется на высокотехнологичном чипе M1 Pro. Пропускная способность памяти составляет более 400 ГБ/с, а еще есть возможность подключения четырех мониторов. MacBook Pro 16 (2021) оснащен превосходным дисплеем Liquid Retina XDR с экстремальным динамическим диапазоном и высочайшей контрастностью.
+              br
+              p.regular_16 Супербыстрые чипы M1 Pro и M1 Max дают феноменальную производительность и обеспечивают удивительно долгое время работы без подзарядки. Прибавьте к этому потрясающий дисплей Liquid Retina XDR и ещё больше портов для профессиональной работы. Это тот самый ноутбук, который вы так ждали.
+            .product-detail__popup-desc-img
+              img(src="assets/img/popup.webp", alt="")
+
+
+        .product-detail__popup-desc#bank-desc
+          .close-btn
+          .container
+            .product-detail__popup-desc-header
+              .product-detail__popup-header-img
+                img(src="assets/img/bank.png", alt="")
+              .product-detail__popup-header-title Потребительский кредит на любые цели до 5 000 000 сомов
+
+            .product-detail__popup-desc-desc
+              h2.semibold_16 Описание
+              br
+              p.regular_16 Приобретение мебели, техники и предметов домашнего обихода, ремонт и/или покупка автомобиля, оплата за обучение, оплата за лечение, путешествие и отдых, проведение торжеств и семейных мероприятий, рефинансирование не проблемных кредитов в других банках и ФКУ и другие потребительские цели.
+              br
+              p.regular_16 Физические лица и индивидуальные предприниматели (патент, свидетельство).
+              br
+              ul 
+                li Возраст от 21 до 65 лет, для зарплатных и/или пенсионных картодержателей Банка - допускается возраст до 70 лет;
+                li Резиденты либо граждане КР;
+                li Наличие постоянного дохода, подтвержденный документально.
+              br
+              h2.semibold_16 Особенности
+              br
+              table
+                tr 
+                  mixin td(td)
+                    td=td 
+                  +td('Валюта')  
+                  +td('Кыргызский сом')  
+                tr 
+                  +td('Срок')  
+                  +td('от 3 до 36 месяцев')  
+                tr 
+                  +td('Погашение')  
+                  +td('ежемесячный аннуитет, ежемесячно основная сумма равными долями.')  
+                tr 
+                  +td('Досрочное погашение:')  
+                  +td('Есть')  
+                  
+            
+
+
+    .container
+      section.section
+        .section__col
+          .title-wrap
+            h3.title С этим товаром смотрят
+              
+        .section__col
+          .products
+            .swiper-container.products-js
+              .swiper-wrapper
+                mixin product(img,price,percent,desc,newProd,hit,cashback,favorite,btn)
+                  .swiper-slide
+                    .products__item
+                      div
+                        .products__item-top
+                          .products__item-top-elements
+                            div
+                              if newProd === 'newprod-none'
+                              else
+                                .products__item-status.products__item-status--br_tertiary_2=newProd
+                              if hit === 'hit-none'
+                              else
+                                .products__item-status.products__item-status--br_secondary_2=hit
+                              
+                              if cashback === 'cashback-none'
+                              else
+                                .products__item-status.products__item-status--br_primary_1=cashback
+                          if favorite === 'favorite-none'
+                            button.products__item-favorite
+                          else    
+                            button(class='products__item-favorite products__item-favorite--'+favorite)
+                          a(href="#").products__item-img
+                            img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, onerror="this.src='assets/img/default-img.png'" alt="").lazy
+                        .products__item-price                                                                                                                      
+                          if percent === 'percent-none'
+                          else
+                            .discount-price
+                              s.irrelevant=price
+                                | сом
+                              span.discount -
+                                span(data-val=percent)=percent  
+                                |%
+                          .actual-price(data-val=price)
+                            span=price
+                            | сом
+                        .products__item-desc=desc
+                      if btn === 'basket'
+                        .products__item-btn
+                          button.add-to-basket В корзину
+                          .products__item-counter
+                            .products__item-counter-trash
+                              i.icon-ic_trash
+                            input.count-minus(type='button' value='-')
+                            span
+                              input.counter(type='number' value='0')
+                              | шт.
+                            input.count-plus(type='button' value='+')
+                      else if btn === 'not-available'
+                        .products__item-btn
+                          .not-available Нет в наличии
+                        
+                    
+                +product('product1.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','Новинка','Хит','cashback-none', 'favorite-none','basket')    
+                +product('product2.webp','29400','percent-none','Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический','Новинка','hit-none','cashback-none','added','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('','12500','percent-none','Умная колонка JBL Link Music','newprod-none','hit-none','cashback-none','favorite-none','not-available')    
+    
+   
+    
+    include includes/footer/footer
+    include includes/mobile-nav
+    include includes/preloader
+    include includes/catalog          
+  
+  include includes/scripts
+  
+
+
