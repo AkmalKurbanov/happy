@@ -1,3 +1,238 @@
-.cart{
-  
+.cart {
+  height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: rem(3);
+    height: rem(8);
+    background-color: #ccc;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(87, 84, 84);
+    border-radius: 9em;
+  }
+
+  .products__item-counter {
+    display: flex;
+  }
+
+  .count-minus {
+    display: block !important;
+  }
+
+  &__item-list {
+    border-radius: rem(10);
+    overflow: hidden;
+    background-color: $neu_primary_6;
+  }
+
+  &__item {
+    padding: rem(16);
+    background-color: $neu_primary_6;
+    margin-bottom: rem(15);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .discount {
+      display: none;
+    }
+  }
+
+  &__item-col-wrap {
+    @include aifs;
+  }
+
+  &__item-img {
+    min-width: rem(70);
+    display: inline-block;
+    margin-right: rem(20);
+  }
+
+  &__item-name {
+    margin-bottom: rem(4);
+    padding-right: 34px;
+  }
+
+  &__item-appearance {
+    color: $neu_primary_2;
+  }
+
+  &__item-delete {
+    color: $neu_primary_3;
+    @include jfcfe;
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .products__item-price {
+    @include aic-jfcsb;
+    margin-top: rem(10);
+  }
+
+  .products__item-counter {
+    min-height: rem(32);
+    min-width: rem(100);
+    padding: 0 rem(10);
+
+    span {
+      margin-left: 0;
+    }
+  }
+
+  &__promo {
+    padding: rem(15);
+    border-top: rem(1) solid $neu_primary_4;
+
+    input {
+      @include regular_14;
+    }
+  }
+
+  &__points {
+    padding: rem(15);
+
+    input {
+      @include regular_14;
+    }
+
+    .points-input {
+      display: none;
+    }
+
+    span.regular_12 {
+      color: $neu_primary_2;
+      margin-top: rem(8);
+      display: block;
+    }
+  }
+
+  &__points-swich-wrap {
+    @include aic-jfcsb;
+    margin-bottom: rem(15);
+
+    label {
+      cursor: pointer;
+      color: $neu_primary_2;
+    }
+
+  }
+
+  &__points-swich {
+    display: inline-block;
+    position: relative;
+    input {
+      width: rem(36);
+      height: rem(20);
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+
+
+    span {
+      width: rem(36);
+      height: rem(20);
+      border-radius: rem(20);
+      display: block;
+      position: relative;
+      cursor: pointer;
+      background-color: $neu_primary_4;
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: rem(16);
+        height: rem(16);
+        background-color: $neu_primary_6;
+        box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.08);
+        border-radius: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: $tr;
+        left: rem(2);
+      }
+    }
+
+    input:checked {
+      ~span {
+        background-color: $br_primary_2;
+
+        &:after {
+          transform: translateY(-50%) translateX(100%);
+        }
+      }
+    }
+  }
+
+  &__total {
+    padding: rem(24) rem(15) rem(15);
+
+    li {
+      @include aic-jfcsb;
+      @include regular_12;
+      color: $neu_primary_2;
+      margin-bottom: rem(4);
+
+      span {
+        position: relative;
+      }
+    }
+
+    .btn {
+      margin-top: rem(24);
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__total-total-discount {
+    color: $br_secondary_2;
+  }
+
+  &__total-total-sum {
+    @include semibold_16;
+    color: $neu_primary_1;
+  }
+
+  &__total-info {
+    width: rem(13);
+    height: rem(13);
+    background-color: $neu_primary_3;
+    border-radius: rem(3);
+    @include aic-jcc;
+    color: $neu_primary_6;
+    display: inline-flex;
+    font-size: rem(10);
+    cursor: pointer;
+  }
+
+  &__total-info-dropdown {
+    padding: rem(12);
+    background-color: $neu_primary_6;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: rem(10);
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    min-width: rem(224);
+    opacity: 0;
+    transition: $tr;
+    pointer-events: none;
+
+    &.open {
+      opacity: 1;
+      pointer-events: inherit;
+      bottom: calc(100% + 5px);
+    }
+  }
 }

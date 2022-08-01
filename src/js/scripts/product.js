@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.products__item, .product-detail__price-block').each(function (index) {
+  $('.products__item, .product-detail__price-block, .cart__item').each(function (index) {
     let price = Number($.trim($(this).find('.actual-price').attr('data-val')));
     let percent = Number($.trim($(this).find('.discount span').attr('data-val')));
     let percentSum = (price * percent / 100);
@@ -10,20 +10,41 @@ $(document).ready(function () {
     $(this).next().find('.counter').val() + 1;
     $(this).parent().find(".count-plus").trigger("click");
   });
-  $(document).on('click', '.count-plus', function () {
+  $(document).on('click', '.products__item .count-plus', function () {
     $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
     if ($(this).prev().find('.counter').val() >= 2) {
       $(this).parent().find('.count-minus').show();
       $(this).parent().find('.products__item-counter-trash').hide();
     }
   });
-  $(document).on('click', '.count-minus', function () {
+  $(document).on('click', '.products__item .count-minus', function () {
     if ($(this).next().find('.counter').val() <= 2) {
       $(this).prev().show();
       $(this).hide();
       $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
     } else if ($(this).next().find('.counter').val() >= 2) {
       $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
+    }
+  });
+  $(document).on('click', '.slide-panel .count-plus', function () {
+    $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
+    if ($(this).prev().find('.counter').val() == 2) {
+      $(this).parent().find('.count-minus').css('pointer-events', 'inherit');
+    }
+  });
+  $(document).on('click', '.slide-panel .count-minus', function () {
+    $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
+
+    if ($(this).next().find('.counter').val() == 1) {
+      $(this).css('pointer-events', 'none');
+    }
+  });
+
+
+
+  $('.cart .cart__item').each(function (index) {
+    if ($(this).find('.counter').val() == 1) {
+      $(this).find('.count-minus').css('pointer-events', 'none');
     }
   });
 

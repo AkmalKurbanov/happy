@@ -1,10 +1,90 @@
 .slide-panel.slide-panel--right#basket-panel
   .close-btn
-  //- .empty
-  //-   h2.semibold_28 Ой, пусто!
-  //-   p.regular_16 Ваша корзина пуста, откройте «Каталог» и выберите понравившийся товар.
+  .empty(style="display: none")
+    h2.semibold_28 Ой, пусто!
+    p.regular_16 Ваша корзина пуста, откройте «Каталог» и выберите понравившийся товар.
   h2.slide-panel__title.semibold_28 Корзина
   br
-  //- .cart
-  //-   mixin cart(img,name,color)
-  //-   .cart__item 
+  .cart
+    .cart__item-list
+      mixin cart(img,name,appearance,val,discount,actualprice)
+        .cart__item
+          .cart__item-delete
+            i.icon-ic_close
+          .cart__item-col-wrap
+            .cart__item-col
+              .cart__item-img 
+                img(src="assets/img/"+img, alt="")
+            .cart__item-col
+              .cart__item-name.regular_12=name 
+              .cart__item-appearance.regular_12=appearance
+              .cart__item-control
+              .products__item-price
+                div
+                  .discount-price
+                    s.irrelevant
+                      span.crossed_12=actualprice  
+                      | сом
+                    span.discount
+                      span(data-val=discount)
+                  .actual-price(data-val=actualprice)
+                    span.medium_14 
+                    | сом
+                div      
+                  .products__item-counter
+                    input.count-minus(type='button' value='-')
+                    span
+                      input.counter(type='number' value=val)
+                    input.count-plus(type='button' value='+')
+           
+            
+  
+          
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','1', '40', '299990' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+      +cart('gallery-main.jpg','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '28900' )    
+
+      .cart__promo
+        .input.activation
+          input(placeholder="Введите промокод")
+          .input__icon
+            i.icon-ic_add
+      .cart__points
+        .cart__points-swich-wrap
+          label(for="points").regular_14 Использовать баллы    
+          .cart__points-swich
+            input(type="checkbox")#points
+            span
+        .points-input    
+          .input.activation
+            input(placeholder="Введите промокод")
+            .input__icon
+              i.icon-ic_add
+          span.regular_12 200 баллов доступно к оплате.    
+      .cart__total
+        ul 
+          li 
+            span Товары:
+            span 233 840 сом
+          li 
+            span Cкидка:
+            span.cart__total-total-discount -26 380 сом
+          li 
+            span Доставка:
+            span Договорная
+              .cart__total-info i
+              .cart__total-info-dropdown.regular_12.neu_primary_2 Мы сообщим вам о стоимости доставки после оформления заказа. 
+          li 
+            span.cart__total-total-sum Сумма:
+            span.cart__total-total-sum 207 460 сом
+        button.btn.btn--br_primary_2 Перейти к оформлению
+        p.regular_12.neu_primary_2.jcc
+          i.icon-ic_shield.br_primary_2(style="font-size: 16px;margin-right: 5px")
+          | Безопасное оформление заказа 

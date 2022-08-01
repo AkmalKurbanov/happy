@@ -25,6 +25,9 @@
   display: flex;
   justify-content: center;
 }
+.jcc{
+  @include jcc;
+}
 
 @mixin jfcsb {
   display: flex;
@@ -163,18 +166,3 @@
   justify-content: flex-start;
 }
 
-
-.br_tertiary_2 {
-  background: $br_tertiary_2;
-  color: $br_primary_1;
-}
-
-.br_secondary_2 {
-  background-color: $br_secondary_2;
-  color: $br_tertiary_2;
-}
-
-.br_primary_1 {
-  background-color: $br_primary_1;
-  color: $br_tertiary_2;
-}
