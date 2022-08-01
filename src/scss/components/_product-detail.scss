@@ -423,6 +423,10 @@
     padding: rem(20);
     margin-bottom: rem(15);
 
+    @include xs {
+      padding: rem(15);
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -604,10 +608,12 @@
   }
 
   &__credit-content {
+    padding-right: rem(40);
+
     &--secondary-format {
       display: flex;
       flex-wrap: wrap;
-
+      position: relative;
 
       .product-detail__credit-item {
         align-items: flex-start;
@@ -825,5 +831,16 @@
 
   &__popup-header-title {
     @include semibold_18;
+  }
+
+  &__points {
+    padding: rem(4) rem(8);
+    background-color: $br_secondary_2;
+    border-radius: rem(20);
+    color: $neu_primary_6;
+    @include medium_12;
+    position: absolute;
+    right: 0;
+    top: rem(15);
   }
 }

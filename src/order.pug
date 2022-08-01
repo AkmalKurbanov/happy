@@ -1,0 +1,337 @@
+extends layout/main/main
+block title
+  | order
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      
+    
+    .container.order
+      a(href="#").back.neu_primary_2.medium_14
+        span Вернуться в корзину
+      section.section.section--triple-section
+        .section__col
+          .title-wrap
+            h3.title Оформление заказа
+        .section__col 
+          form(action="").order__form
+            h2.semibold_16 Адрес доставки 
+            .order__input-wrap
+              .input
+                input(type="text" placeholder="Имя" name="Имя") 
+              .input
+                input(type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон").phone-mask 
+              .select 
+                .select__selected(data-val="Бишкек") Бишкек
+                .select__dropdown 
+                  .select__option(data-val="Бишкек")  Бишкек
+                  .select__option(data-val="Бишкек1") Бишкек1
+                  .select__option(data-val="Бишкек2") Бишкек2
+                  .select__option(data-val="Бишкек3") Бишкек3
+                  .select__option(data-val="Бишкек4") Бишкек4
+              .select 
+                .select__selected(data-val="Выберите район") Выберите район
+                .select__dropdown 
+                  .select__option(data-val="район1") район1
+                  .select__option(data-val="район2") район2
+                  .select__option(data-val="район3") район3
+                  .select__option(data-val="район4") район4
+              .input
+                input(type="text" placeholder="Улица" name="Улица") 
+              .input
+                input(type="text" placeholder="Номер дома/кв." name="Номер дома/кв.") 
+              .input
+                textarea(name="Примечание" placeholder='Примечание')
+            .order__pay
+              h2.semibold_16.neu_primary_1 Способ оплаты   
+              br
+              .order__pay-method
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="pay-method")#cash
+                      span
+                      div
+                        label(for="cash") Наличными при получении 
+                        .settings.br_secondary_2.medium_12.settings-credit-js изменить
+                  .order__pay-icon 
+                    label(for="cash") 
+                      img(src="assets/img/pay1.webp", alt="")
+                .order__pay-item 
+                  .order__pay-radio 
+                    div.aic
+                      input(type="radio" name="pay-method")#bank-card
+                      span
+                      div
+                        label(for="bank-card") Банковской картой
+                        .settings.br_secondary_2.medium_12.settings-credit-js изменить
+                  .order__pay-icon 
+                    label(for="bank-card") 
+                      img(src="assets/img/pay2.webp", alt="")
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="pay-method")#o-money
+                      span
+                      div
+                        label(for="o-money") О! Деньги
+                        .settings.br_secondary_2.medium_12.settings-credit-js изменить
+                  .order__pay-icon 
+                    label(for="o-money") 
+                      img(src="assets/img/pay3.webp", alt="")
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="pay-method")#balance-kg
+                      span
+                      div
+                        label(for="balance-kg") Balance.KG
+                        .settings.br_secondary_2.medium_12.settings-credit-js изменить
+                  .order__pay-icon 
+                    label(for="balance-kg") 
+                      img(src="assets/img/pay4.webp", alt="")
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="pay-method")#on-credit
+                      span
+                      div
+                        label(for="on-credit") В кредит / рассрочку
+                        .settings.br_secondary_2.medium_12.settings-credit-js изменить
+                  .order__pay-icon 
+                    label(for="on-credit")  
+                      img(src="assets/img/pay5.webp", alt="")
+            .cart__total
+              ul 
+                li 
+                  span Сумма: 
+                    br
+                    span.cart__total-total-sum 233 840 сом
+                  span 
+                    button(disabled).btn.btn--br_secondary_2 Оформить заказ
+              br
+              p.regular_12.neu_primary_2.jcc
+                i.icon-ic_shield.br_primary_2(style="font-size: 16px;margin-right: 5px")
+                | Безопасное оформление заказа       
+          .cart
+            .cart__item-list
+              mixin cart(img,name,appearance,val,discount,actualprice)
+                .cart__item
+                  .cart__item-delete
+                    i.icon-ic_close
+                  .cart__item-col-wrap
+                    .cart__item-col
+                      .cart__item-img 
+                        img(src="assets/img/"+img, alt="")
+                    .cart__item-col
+                      .cart__item-name.regular_12=name 
+                      .cart__item-appearance.regular_12=appearance
+                      .cart__item-control
+                      .products__item-price
+                        div
+                          .discount-price
+                            s.irrelevant
+                              span.crossed_12=actualprice  
+                              | сом
+                            span.discount
+                              span(data-val=discount)
+                          .actual-price(data-val=actualprice)
+                            span.medium_14 
+                            | сом
+                        .order__count.regular_12.neu_primary_2      
+                          =val
+                          |  шт.
+     
+           
+            
+  
+          
+              +cart('gallery-main.webp','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','1', '40', '299990' )    
+              +cart('gallery-main.webp','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '299990' )    
+
+              .cart__total
+                ul 
+                  li 
+                    span Товары:
+                    span 233 840 сом
+                  li 
+                    span Cкидка:
+                    span.cart__total-total-discount -26 380 сом
+                  li 
+                    span Оплата баллами:
+                    span.cart__total-total-discount - 200 сом
+                  li 
+                    span Доставка:
+                    span Договорная
+                      .cart__total-info i
+                      .cart__total-info-dropdown.regular_12.neu_primary_2 Мы сообщим вам о стоимости доставки после оформления заказа. 
+                  li 
+                    span.cart__total-total-sum Сумма:
+                    span.cart__total-total-sum 207 460 сом
+                
+               
+          
+    .offer.offer-credit
+      .close-btn
+      .product-detail
+        h2.semibold_28.neu_primary_1 Предложения
+        p.regular_14.neu_primary_2 Выберите удобный вам вариант кредита / рассрочки.
+        br 
+        .product-detail__price-block
+          .product-detail__credit-bank.aic-jfcsb
+            .aic
+              .product-detail__credit-bank-logo 
+                img(src="assets/img/bank.webp", alt="")
+              .product-detail__credit-bank-name Бакай банк
+            .product-detail__credit-bank-more Подробнее 
+          .product-detail__credit  
+            .product-detail__credit-top 
+              div
+                .semibold_16 8900 сом сегодня
+                .regular_12 Общая переплата: 1143 сом
+              button.btn.btn--br_primary_2 Выбрать 
+            .tab
+              .tab-wrap
+                ul.tabs
+                  li
+                    a(href='#') 3 мес
+                  li
+                    a(href='#') 6 мес
+                  li
+                    a(href='#') 9 мес
+                  li
+                    a(href='#') 12 мес
+                  span.runner
+              .tab_content
+                mixin tab(modify)
+                  .tabs_item
+
+                    if modify === ''
+                      .product-detail__credit-content
+                        mixin item(date,sum,active)
+                          .product-detail__credit-item(class=active)
+                            .product-detail__credit-date=date 
+                            .product-detail__credit-sum=sum   
+                        +item('Сегодня','8900 сом','active')
+                        +item('11 авг','8900 сом')
+                        +item('11 сен','8900 сом')
+                        +item('11 окт','8900 сом')
+                        +item('11 ноя','8900 сом')
+                        +item('11 дек','8900 сом')
+                        
+                    else   
+                      .product-detail__credit-content(class="product-detail__credit-content--"+modify)
+                        mixin item(date,sum,active)
+                          .product-detail__credit-item(class=active)
+                            .product-detail__credit-date=date 
+                            .product-detail__credit-sum=sum   
+                        +item('Сегодня','8900 сом','active')
+                        +item('11 авг','8900 сом')
+                        +item('11 сен','8900 сом')
+                        +item('11 окт','8900 сом')
+                        .product-detail__points +2
+                      
+                +tab('secondary-format')
+                +tab('secondary-format')
+                +tab('secondary-format')
+                +tab('secondary-format')
+        .product-detail__price-block
+          .product-detail__credit-bank.aic-jfcsb
+            .aic
+              .product-detail__credit-bank-logo 
+                img(src="assets/img/bank.webp", alt="")
+              .product-detail__credit-bank-name Бакай банк
+            .product-detail__credit-bank-more Подробнее 
+          .product-detail__credit  
+            .product-detail__credit-top 
+              div
+                .semibold_16 8900 сом сегодня
+                .regular_12 Общая переплата: 1143 сом
+              button.btn.btn--br_primary_2 Выбрать 
+            .tab
+              .tab-wrap
+                ul.tabs
+                  li
+                    a(href='#') 3 мес
+                  li
+                    a(href='#') 6 мес
+                  li
+                    a(href='#') 9 мес
+                  li
+                    a(href='#') 12 мес
+                  span.runner
+              .tab_content
+                +tab('')
+                +tab('')
+                +tab('')
+                +tab('')
+
+    .product-detail__popup-desc#bank-desc
+      .close-btn
+      .container
+        .product-detail__popup-desc-header
+          .product-detail__popup-header-img
+            img(src="assets/img/bank.webp", alt="")
+          .product-detail__popup-header-title Потребительский кредит на любые цели до 5 000 000 сомов
+
+        .product-detail__popup-desc-desc
+          h2.semibold_16 Описание
+          br
+          p.regular_16 Приобретение мебели, техники и предметов домашнего обихода, ремонт и/или покупка автомобиля, оплата за обучение, оплата за лечение, путешествие и отдых, проведение торжеств и семейных мероприятий, рефинансирование не проблемных кредитов в других банках и ФКУ и другие потребительские цели.
+          br
+          p.regular_16 Физические лица и индивидуальные предприниматели (патент, свидетельство).
+          br
+          ul 
+            li Возраст от 21 до 65 лет, для зарплатных и/или пенсионных картодержателей Банка - допускается возраст до 70 лет;
+            li Резиденты либо граждане КР;
+            li Наличие постоянного дохода, подтвержденный документально.
+          br
+          h2.semibold_16 Особенности
+          br
+          table
+            tr 
+              mixin td(td)
+                td=td 
+              +td('Валюта')  
+              +td('Кыргызский сом')  
+            tr 
+              +td('Срок')  
+              +td('от 3 до 36 месяцев')  
+            tr 
+              +td('Погашение')  
+              +td('ежемесячный аннуитет, ежемесячно основная сумма равными долями.')  
+            tr 
+              +td('Досрочное погашение:')  
+              +td('Есть')    
+
+    .sucsess-order(style="display: none;")
+      .container 
+        h2.semibold_28.neu_primary_1 Ваш заказ получен!
+        br
+
+        p.regular_14.neu_primary_2 В ближайшее время, с вами свяжется менеджер <br> для уточнения деталей покупки.                    
+        .sucsess-order__block
+          .sucsess-order__block-top
+            .sucsess-order__status
+              .products__item-status.products__item-status--br_primary_1 В обработке
+              .sucsess-order__time.regular_12.neu_primary_2 23 Сен 2022 в 13:40
+            p.semibold_16 Ваша заявка на кредит/рассрочку <br>  ожидает подтверждения.
+          .sucsess-order__product-list
+            .sucsess-order__product-item 
+              img(src="assets/img/thumb1.webp", alt="")
+            .sucsess-order__product-item 
+              img(src="assets/img/thumb3.webp", alt="")
+        p.medium_14.neu_primary_2 Остались вопросы? Будем рады помочь по номеру <br>
+          a(href="#").br_secondary_2 +996 (777)  123456    
+        
+        button.btn.btn--br_primary_2 Перейти на главную 
+   
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog    
+    include includes/footer/footer
+  
+  
+  include includes/scripts

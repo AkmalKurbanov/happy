@@ -1,7 +1,7 @@
 $(document).ready(function () {
   jQuery(function ($) {
     $(document).mouseup(function (e) {
-      var div = $(".catalog-menu, .product-detail__popup, .product-detail__popup-desc, .product-detail__popup-img, .slide-panel ");
+      var div = $(".catalog-menu, .product-detail__popup, .product-detail__popup-desc, .product-detail__popup-img, .slide-panel, .offer-credit");
       if (!div.is(e.target) &&
         div.has(e.target).length === 0) {
         div.removeClass('open');
@@ -44,6 +44,15 @@ $(document).ready(function () {
   jQuery(function ($) {
     $(document).mouseup(function (e) {
       var div = $(".cart__total-info-dropdown");
+      if (!div.is(e.target) &&
+        div.has(e.target).length === 0) {
+        div.removeClass('open');
+      }
+    });
+  });
+  jQuery(function ($) {
+    $(document).mouseup(function (e) {
+      var div = $(".select__dropdown");
       if (!div.is(e.target) &&
         div.has(e.target).length === 0) {
         div.removeClass('open');

@@ -1,0 +1,223 @@
+extends layout/main/main
+block title
+  | credit
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      
+    
+    .container.order
+      a(href="#").back.neu_primary_2.medium_14
+        span Вернуться к заказу
+      section.section.section--triple-section
+        .section__col
+          .title-wrap
+            h3.title Заявка
+            p.regular_14.neu_primary_2 Данные будут обработаны <br> специалистами из банка.  
+        .section__col 
+          form(action="").order__form.order__form--credit
+            .order__input-wrap
+              .select 
+                .select__selected(data-val="Я - физическое лицо") Я - физическое лицо
+                .select__dropdown 
+                  .select__option(data-val="Я - физическое лицо") Я - физическое лицо
+                  .select__option(data-val="Я - юридическое лицо") Я - юридическое лицо
+              .select 
+                .select__selected(data-val="Хочу рассрочку на 2 месяца") Хочу рассрочку на 2 месяца
+                .select__dropdown 
+                  .select__option(data-val="Хочу рассрочку на 2 месяца") Хочу рассрочку на 2 месяца
+                  .select__option(data-val="Хочу рассрочку на 4 месяца") Хочу рассрочку на 4 месяца
+                  .select__option(data-val="Хочу рассрочку на 6 месяцев") Хочу рассрочку на 6 месяцев
+                  .select__option(data-val="Хочу рассрочку на 8 месяцев") Хочу рассрочку на 8 месяцев
+                  .select__option(data-val="Хочу рассрочку на 10 месяцев") Хочу рассрочку на 10 месяцев
+                  .select__option(data-val="Хочу рассрочку на 12 месяцев") Хочу рассрочку на 12 месяцев
+              .input
+                textarea(name="Примечание" placeholder='Примечание')
+            .order__pay
+              .order__pay-method
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="guarantor")#no-guarantor
+                      span
+                      div
+                        label(for="no-guarantor") Поручителя нет
+                .order__pay-item 
+                  .order__pay-radio
+                    div.aic
+                      input(type="radio" name="guarantor")#yes-guarantor
+                      span
+                      div
+                        label(for="yes-guarantor") Есть поручитель
+
+                
+            .cart__total
+              button.btn.btn--br_secondary_2 Отправить заявку    
+       
+               
+          
+    .offer.offer-credit
+      .close-btn
+      .product-detail
+        h2.semibold_28.neu_primary_1 Предложения
+        p.regular_14.neu_primary_2 Выберите удобный вам вариант кредита / рассрочки.
+        br 
+        .product-detail__price-block
+          .product-detail__credit-bank.aic-jfcsb
+            .aic
+              .product-detail__credit-bank-logo 
+                img(src="assets/img/bank.webp", alt="")
+              .product-detail__credit-bank-name Бакай банк
+            .product-detail__credit-bank-more Подробнее 
+          .product-detail__credit  
+            .product-detail__credit-top 
+              div
+                .semibold_16 8900 сом сегодня
+                .regular_12 Общая переплата: 1143 сом
+              button.btn.btn--br_primary_2 Выбрать 
+            .tab
+              .tab-wrap
+                ul.tabs
+                  li
+                    a(href='#') 3 мес
+                  li
+                    a(href='#') 6 мес
+                  li
+                    a(href='#') 9 мес
+                  li
+                    a(href='#') 12 мес
+                  span.runner
+              .tab_content
+                mixin tab(modify)
+                  .tabs_item
+
+                    if modify === ''
+                      .product-detail__credit-content
+                        mixin item(date,sum,active)
+                          .product-detail__credit-item(class=active)
+                            .product-detail__credit-date=date 
+                            .product-detail__credit-sum=sum   
+                        +item('Сегодня','8900 сом','active')
+                        +item('11 авг','8900 сом')
+                        +item('11 сен','8900 сом')
+                        +item('11 окт','8900 сом')
+                        +item('11 ноя','8900 сом')
+                        +item('11 дек','8900 сом')
+                        
+                    else   
+                      .product-detail__credit-content(class="product-detail__credit-content--"+modify)
+                        mixin item(date,sum,active)
+                          .product-detail__credit-item(class=active)
+                            .product-detail__credit-date=date 
+                            .product-detail__credit-sum=sum   
+                        +item('Сегодня','8900 сом','active')
+                        +item('11 авг','8900 сом')
+                        +item('11 сен','8900 сом')
+                        +item('11 окт','8900 сом')
+                        .product-detail__points +2
+                      
+                +tab('secondary-format')
+                +tab('secondary-format')
+                +tab('secondary-format')
+                +tab('secondary-format')
+        .product-detail__price-block
+          .product-detail__credit-bank.aic-jfcsb
+            .aic
+              .product-detail__credit-bank-logo 
+                img(src="assets/img/bank.webp", alt="")
+              .product-detail__credit-bank-name Бакай банк
+            .product-detail__credit-bank-more Подробнее 
+          .product-detail__credit  
+            .product-detail__credit-top 
+              div
+                .semibold_16 8900 сом сегодня
+                .regular_12 Общая переплата: 1143 сом
+              button.btn.btn--br_primary_2 Выбрать 
+            .tab
+              .tab-wrap
+                ul.tabs
+                  li
+                    a(href='#') 3 мес
+                  li
+                    a(href='#') 6 мес
+                  li
+                    a(href='#') 9 мес
+                  li
+                    a(href='#') 12 мес
+                  span.runner
+              .tab_content
+                +tab('')
+                +tab('')
+                +tab('')
+                +tab('')
+
+    .product-detail__popup-desc#bank-desc
+      .close-btn
+      .container
+        .product-detail__popup-desc-header
+          .product-detail__popup-header-img
+            img(src="assets/img/bank.webp", alt="")
+          .product-detail__popup-header-title Потребительский кредит на любые цели до 5 000 000 сомов
+
+        .product-detail__popup-desc-desc
+          h2.semibold_16 Описание
+          br
+          p.regular_16 Приобретение мебели, техники и предметов домашнего обихода, ремонт и/или покупка автомобиля, оплата за обучение, оплата за лечение, путешествие и отдых, проведение торжеств и семейных мероприятий, рефинансирование не проблемных кредитов в других банках и ФКУ и другие потребительские цели.
+          br
+          p.regular_16 Физические лица и индивидуальные предприниматели (патент, свидетельство).
+          br
+          ul 
+            li Возраст от 21 до 65 лет, для зарплатных и/или пенсионных картодержателей Банка - допускается возраст до 70 лет;
+            li Резиденты либо граждане КР;
+            li Наличие постоянного дохода, подтвержденный документально.
+          br
+          h2.semibold_16 Особенности
+          br
+          table
+            tr 
+              mixin td(td)
+                td=td 
+              +td('Валюта')  
+              +td('Кыргызский сом')  
+            tr 
+              +td('Срок')  
+              +td('от 3 до 36 месяцев')  
+            tr 
+              +td('Погашение')  
+              +td('ежемесячный аннуитет, ежемесячно основная сумма равными долями.')  
+            tr 
+              +td('Досрочное погашение:')  
+              +td('Есть')    
+
+    .sucsess-order(style="display: none;")
+      .container 
+        h2.semibold_28.neu_primary_1 Ваш заказ получен!
+        br
+
+        p.regular_14.neu_primary_2 В ближайшее время, с вами свяжется менеджер <br> для уточнения деталей покупки.                    
+        .sucsess-order__block
+          .sucsess-order__block-top
+            .sucsess-order__status
+              .products__item-status.products__item-status--br_primary_1 В обработке
+              .sucsess-order__time.regular_12.neu_primary_2 23 Сен 2022 в 13:40
+            p.semibold_16 Ваша заявка на кредит/рассрочку <br>  ожидает подтверждения.
+          .sucsess-order__product-list
+            .sucsess-order__product-item 
+              img(src="assets/img/thumb1.webp", alt="")
+            .sucsess-order__product-item 
+              img(src="assets/img/thumb3.webp", alt="")
+        p.medium_14.neu_primary_2 Остались вопросы? Будем рады помочь по номеру <br>
+          a(href="#").br_secondary_2 +996 (777)  123456    
+        
+        button.btn.btn--br_primary_2 Перейти на главную 
+
+
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog    
+    include includes/footer/footer
+  
+  
+  include includes/scripts

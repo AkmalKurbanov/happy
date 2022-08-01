@@ -68,8 +68,15 @@
     top: rem(15);
     right: rem(15);
 
+    &:hover {
+      i {
+        color: $neu_primary_1;
+      }
+    }
+
     i {
       cursor: pointer;
+      transition: $tr;
     }
   }
 
@@ -129,6 +136,7 @@
   &__points-swich {
     display: inline-block;
     position: relative;
+
     input {
       width: rem(36);
       height: rem(20);

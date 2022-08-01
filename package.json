@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "easyzoom": "^2.5.2",
+    "inputmask": "^5.0.7",
     "jquery": "^3.4.1",
     "mmenu-js": "^9.1.6",
     "normalize.css": "^8.0.1",
