@@ -185,6 +185,7 @@
 
   &__total {
     padding: rem(24) rem(15) rem(15);
+    border-top: rem(1) solid $neu_primary_4;
 
     li {
       @include aic-jfcsb;

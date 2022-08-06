@@ -22,9 +22,9 @@ $(document).ready(function () {
 
 
   (function ($) {
-    $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+    $('.product-detail .tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
 
-    $('.tab ul.tabs li a').click(function (g) {
+    $('.product-detail .tab ul.tabs li a').click(function (g) {
       var tab = $(this).closest('.tab'),
         index = $(this).closest('li').index();
 

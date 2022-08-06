@@ -20,9 +20,9 @@ block main
             h2.semibold_16 Адрес доставки 
             .order__input-wrap
               .input
-                input(type="text" placeholder="Имя" name="Имя") 
+                input(type="text" placeholder="Имя" name="Имя")#name
               .input
-                input(type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон").phone-mask 
+                input(type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон").phone-mask#phone 
               .select 
                 .select__selected(data-val="Бишкек") Бишкек
                 .select__dropdown 
@@ -32,16 +32,16 @@ block main
                   .select__option(data-val="Бишкек3") Бишкек3
                   .select__option(data-val="Бишкек4") Бишкек4
               .select 
-                .select__selected(data-val="Выберите район") Выберите район
+                .select__selected(data-val="Район не выбран") Выберите район
                 .select__dropdown 
                   .select__option(data-val="район1") район1
                   .select__option(data-val="район2") район2
                   .select__option(data-val="район3") район3
                   .select__option(data-val="район4") район4
               .input
-                input(type="text" placeholder="Улица" name="Улица") 
+                input(type="text" placeholder="Улица" name="Улица")#street
               .input
-                input(type="text" placeholder="Номер дома/кв." name="Номер дома/кв.") 
+                input(type="text" placeholder="Номер дома/кв." name="Номер дома/кв.")#address
               .input
                 textarea(name="Примечание" placeholder='Примечание')
             .order__pay

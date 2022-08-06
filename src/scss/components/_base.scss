@@ -237,6 +237,7 @@ form {
   padding-left: rem(20);
   margin-bottom: rem(15);
   display: block;
+  cursor: pointer;
 
   &:before {
     position: absolute;
@@ -410,6 +411,7 @@ form {
   @include aic-jcc-fdc;
   text-align: center;
   height: 100%;
+  padding: rem(15) 0;
 
   h2 {
     margin-bottom: rem(15);

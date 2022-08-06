@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $('.cart-js').on('click', function (e) {
-    $('.wrapper').removeClass('mm-page mm-slideout');
+    $('div').removeClass('mm-page mm-slideout');
     e.preventDefault();
     $('#basket-panel').addClass('open');
     $('body').addClass('layer no-scroll');
@@ -37,7 +37,6 @@ $(document).ready(function () {
   $('.cart__total-info-dropdown').on('mouseout', function () {
     $(this).removeClass('open');
   });
-  $('')
 
 
 });

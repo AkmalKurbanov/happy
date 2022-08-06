@@ -1,0 +1,161 @@
+extends layout/main/main
+block title
+  | profile
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      .profile
+        .container
+          h2.title Профиль
+          .profile__wrap.tab
+            .profile__col
+              .profile__info 
+                .profile__info-col
+                  h2.medium_16.neu_primary_1 Бакыт И.
+                  p.regular_14.neu_primary_2 bakyt.it@gmail.com
+                .profile__info-col 
+                  .profile__points.medium_12  1
+                  p.regular_12.neu_primary_1 Баллов
+              .tab-wrap
+                ul.tabs
+                  li
+                    a(href='#')#orders-js Мои заказы
+                      .profile__icon
+                        i.icon-ic_orders
+                  li
+                    a(href='#') Уведомления
+                      .profile__icon
+                        .notification.active
+                  li
+                    a(href='#') Адрес доставки
+                      .profile__icon
+                        i.icon-ic_happy_home
+                  li
+                    a(href='#') Настройки
+                      .profile__icon
+                        i.icon-ic_settings
+                  li
+                    a(href='#') Выйти
+                      .profile__icon
+                        i.icon-ic_logout
+            .profile__col
+              .tab_content
+                .tabs_item#orders
+                  a(href="#").back.medium_14.neu_primary_2 Вернуться в профиль 
+                  h2.title Мои заказы
+                  .empty(style="display: none;")
+                    h2.semibold_28 Ой, пусто!
+                    p.regular_16 Здесь будет храниться история ваших <br> заказов.
+                    a(href="#").btn.btn--br_primary_2 Перейти в каталог
+                  
+                  .profile__list 
+                    mixin item(statusclass,status,name,notif)
+                      .profile__item
+                        .profile__item-top
+                          div(class="products__item-status products__item-status--"+statusclass)=status
+                          .profile__date 23 Сен 2022 в 13:40
+                        .profile__item-bottom  
+                          .profile__item-col
+                            a(href="order-detail.html").profile__order-name=name
+                          .profile__item-col
+                            if notif === ''
+                            else
+                              .profile__order-thumbs
+                                a(href="#").profile__order-thumb
+                                  img(src="assets/img/thumb1profile.webp", alt="")
+                                a(href="#").profile__thumb
+                                  img(src="assets/img/thumb2profile.webp", alt="")
+                              
+                    +item('br_primary_1','В обработке','Ваша заявка на кредит/рассрочку ожидает подтверждения')  
+                    +item('br_primary_1','В обработке','Ваш заказ подтверждён')  
+                    +item('br_tertiary_2','В пути','Ваш заказ в пути')  
+                    +item('br_primary_2','Доставлен','Ваш заказ доставлен')  
+                    +item('br_secondary_2','Отменён','Ваш заказ был отменён')  
+                  .pagination
+                    span Страницы:
+                    .pagination__item.disabled
+                      i.icon-ic_arrow_left
+                    .pagination__item.active 1
+                    .pagination__item 2
+                    .pagination__item 3
+                    .pagination__item.intermediate ...
+                    .pagination__item 9
+                    .pagination__item
+                      i.icon-ic_arrow_right
+                .tabs_item
+                  a(href="#").back.medium_14.neu_primary_2 Вернуться в профиль 
+                  h2.title Уведомления
+                  .empty(style="display:none")
+                    h2.semibold_28 Ой, пусто!
+                    p.regular_16 Здесь будет храниться история <br> уведомлений..
+                  +item('br_secondary_2','Баллы','Вам начислено 65 баллов.','')    
+                  +item('br_primary_1','Новость','Карты лояльности, новые способы оплаты и другие темы.','')    
+                  +item('br_primary_1','Новость','Приглашаем в Happy Мир!','')    
+                  +item('br_primary_1','Новость','Майки, солнце и увеличенный кэшбэк!','')    
+                .tabs_item
+                  a(href="#").back.medium_14.neu_primary_2 Вернуться в профиль 
+                  h2.title Адрес доставки
+                  form(action="").order__form
+                    .order__input-wrap
+                      .input
+                        input(type="text" placeholder="Имя" name="Имя")#name
+                      .input
+                        input(type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон").phone-mask#phone 
+                      .select 
+                        .select__selected(data-val="Бишкек") Бишкек
+                        .select__dropdown 
+                          .select__option(data-val="Бишкек")  Бишкек
+                          .select__option(data-val="Бишкек1") Бишкек1
+                          .select__option(data-val="Бишкек2") Бишкек2
+                          .select__option(data-val="Бишкек3") Бишкек3
+                          .select__option(data-val="Бишкек4") Бишкек4
+                      .select 
+                        .select__selected(data-val="Район не выбран") Выберите район
+                        .select__dropdown 
+                          .select__option(data-val="район1") район1
+                          .select__option(data-val="район2") район2
+                          .select__option(data-val="район3") район3
+                          .select__option(data-val="район4") район4
+                      .input
+                        input(type="text" placeholder="Улица" name="Улица")#street
+                      .input
+                        input(type="text" placeholder="Номер дома/кв." name="Номер дома/кв.")#address 
+                      .input.textarea
+                        textarea(name="Примечание" placeholder='Примечание')
+                      button.btn.btn--br_secondary_2.disabled Сохранить  
+                .tabs_item
+                  a(href="#").back.medium_14.neu_primary_2 Вернуться в профиль 
+                  h2.title Настройки
+                  form(action="").order__form.password-form
+                    .order__input-wrap
+                      .input
+                        input(type="password" placeholder="Текущий пароль" name="Текущий пароль")
+                        .show-pass.pass-controll
+                          i.icon-ic_eye_off
+                        .hide-pass.pass-controll
+                          i.icon-ic_eye_on  
+                      .input
+                        input(type="password" placeholder="Новый пароль" name="Новый пароль")
+                        .show-pass.pass-controll 
+                          i.icon-ic_eye_off
+                        .hide-pass.pass-controll
+                          i.icon-ic_eye_on  
+                      .input
+                        input(type="password" placeholder="Повторите новый пароль" name="Повторите новый пароль")
+                        .show-pass.pass-controll 
+                          i.icon-ic_eye_off
+                        .hide-pass.pass-controll
+                          i.icon-ic_eye_on  
+                      
+                    button.btn.btn--br_secondary_2.disabled Сохранить  
+
+              
+    include includes/footer/footer
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog
+  
+  
+  include includes/scripts

@@ -29,8 +29,8 @@ header.header
           .header__controller-top
             .header__controller-count-points 0
           .header__controller-title Баллов
-        mixin controller(icon,title,count,modify)
-         a(href="#" class=modify).header__controller
+        mixin controller(icon,title,count,modify,link)
+         a(href=link class=modify).header__controller
           .header__controller-top
             .header__controller-icon
               if count === ''
@@ -42,7 +42,7 @@ header.header
         +controller('orders','Заказы','')
         +controller('favorite','Избранное',2)
         +controller('cart','Корзина', 6, 'cart-js')
-        +controller('happy_profile','Профиль','')
+        +controller('happy_profile','Профиль','','','profile.html')
 
   .header__bottom.container
     a(href="#catalog-menu").header__catalog-trigger.catalog-trigger-js

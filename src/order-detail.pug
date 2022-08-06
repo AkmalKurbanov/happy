@@ -1,0 +1,118 @@
+extends layout/main/main
+block title
+  | order detail
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      .profile
+        .container
+          .back.back--back.neu_primary_2.medium_14 Вернуться к заказам
+          .profile__wrap
+            .profile__col
+              .cart
+                .cart__item-list
+                  .profile__item
+                    .profile__item-top
+                      .products__item-status.products__item-status--br_primary_1 В обработке
+                      .profile__date 23 Сен 2022 в 13:40
+                    .profile__item-bottom  
+                      .profile__item-col
+                        .profile__order-name Ваш заявка на кредит/рассрочку ожидает подтверждения.
+                  mixin cart(img,name,appearance,val,discount,actualprice)
+                    .cart__item
+                      .cart__item-delete
+                      .cart__item-col-wrap
+                        .cart__item-col
+                          .cart__item-img 
+                            img(src="assets/img/"+img, alt="")
+                        .cart__item-col
+                          .cart__item-name.regular_12=name 
+                          .cart__item-appearance.regular_12=appearance
+                          .cart__item-control
+                          .products__item-price
+                            div
+                              .discount-price
+                                s.irrelevant
+                                  span.crossed_12=actualprice  
+                                  | сом
+                                span.discount
+                                  span(data-val=discount)
+                              .actual-price(data-val=actualprice)
+                                span.medium_14 
+                                | сом
+                            .order__count.regular_12.neu_primary_2      
+                              =val
+                              |  шт.
+        
+              
+                
+      
+              
+                  +cart('gallery-main.webp','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','1', '40', '299990' )    
+                  +cart('gallery-main.webp','16.2" Ноутбук Apple Macbook Pro Late 2021 (3456×2234, Apple M1 Pro, RAM 16 ГБ, Apple graphics 16-core), MK183LL/A, серый космос','Серый космос, 512GB','2', '40', '299990' )    
+
+                  .cart__total
+                    ul 
+                      li 
+                        span Товары:
+                        span 233 840 сом
+                      li 
+                        span Cкидка:
+                        span.cart__total-total-discount -26 380 сом
+                      li 
+                        span Оплата баллами:
+                        span.cart__total-total-discount - 200 сом
+                      li 
+                        span Доставка:
+                        span Договорная
+                          .cart__total-info i
+                          .cart__total-info-dropdown.regular_12.neu_primary_2 Мы сообщим вам о стоимости доставки после оформления заказа. 
+                      li 
+                        span.cart__total-total-sum Сумма:
+                        span.cart__total-total-sum 207 460 сом
+                
+                  
+            .profile__col.profile__order-detail-info
+              .profile__info-order-recipient
+                h2.semibold_16.neu_primary_1 Получатель
+                .profile__recipient-item 
+                  |Айбек, +500123456
+                  |г. Бишкек, Октябрьский район, ул. Ибраимова 56-42
+                .profile__recipient-item 
+                  |Домофон не работает, звоните по номеру.
+              .profile__info-order-detail 
+                h2.semibold_16.neu_primary_1 Детали заказа
+                ul 
+                  li
+                    span Дата заказа
+                    span 23 Сен 2022 в 13:40
+                  li
+                    span Номер заказа
+                    span #192021389
+                  li
+                    span Способ оплаты
+                    span Visa ** 3951
+                  li
+                    span Начислено
+                    span 207 баллов
+                button.semibold_14.neu_primary_2.delete-order-btn Удалить заказ 
+              
+    
+    
+    include includes/footer/footer
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog
+    .delete-order
+      .delete-order__window
+        h2.semibold_16.neu_primary_1 Удаление заказа
+        p.regular_14.neu_primary_2 Вы уверены, что хотите удалить заказ?
+        .delete-order__btn-wrap
+          button.btn.btn--br_secondary_2 Удалить
+          button.btn.btn--br_secondary_2 Отмена
+
+  
+  
+  include includes/scripts

@@ -1,0 +1,638 @@
+.profile {
+  padding: rem(60) 0;
+
+  @include xs {
+    padding: rem(30) 0;
+  }
+
+  .empty {
+    .btn {
+      max-width: rem(250);
+      margin-top: rem(20);
+    }
+  }
+
+  &__wrap {
+    @include aistr;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    &:first-child {
+      max-width: rem(345);
+      width: 100%;
+      margin-right: rem(40);
+
+      @include sm {
+        max-width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: rem(10);
+      }
+
+
+      @include lg {
+        margin-right: rem(30);
+      }
+
+      @include md {
+        margin-right: rem(20);
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    border-radius: rem(10);
+    background-color: $neu_primary_6;
+    padding: rem(15);
+    margin-bottom: rem(8);
+    @include aifs-jfcsb;
+    width: 100%;
+  }
+
+  &__info-col {
+    &:last-child {
+      @include aic-jcc-fdc;
+    }
+  }
+
+  &__points {
+    max-width: rem(24);
+    width: 100%;
+    min-height: rem(24);
+    border-radius: 100%;
+    @include aic-jcc;
+    color: $neu_primary_6;
+    background-color: $br_secondary_2;
+    margin-bottom: rem(2);
+  }
+
+  .tab-wrap {
+    background-color: $neu_primary_6;
+    border-radius: rem(10);
+    padding: rem(8);
+    width: 100%;
+
+    .tabs {
+      li {
+        margin-bottom: rem(8);
+
+        a {
+          @include regular_16;
+          color: $neu_primary_1;
+          padding: rem(12);
+          @include aic-jfcsb;
+          border-radius: rem(10);
+
+          &:hover {
+            background-color: $br_primary_4;
+
+            .notification {
+              &:after {
+                border-color: $br_primary_4;
+              }
+            }
+          }
+
+          .notification {
+            width: rem(17);
+            height: rem(17);
+            border: rem(2) solid $neu_primary_1;
+            border-radius: rem(2);
+            position: relative;
+
+            &:before,
+            &:after {
+              position: absolute;
+              content: '';
+              border-radius: 100%;
+            }
+
+            &:before {
+              width: rem(6);
+              height: rem(6);
+              border: rem(1) solid $neu_primary_1;
+              background-color: $neu_primary_6;
+              right: rem(-3);
+              top: rem(-3);
+            }
+
+            &:after {
+              right: rem(-6);
+              top: rem(-6);
+              width: rem(8);
+              height: rem(8);
+              border: rem(2) solid $neu_primary_6;
+              background-color: $br_secondary_2;
+              display: none;
+            }
+
+            &.active {
+              &:before {
+                display: none;
+              }
+
+              &:after {
+                display: block;
+              }
+            }
+          }
+        }
+
+        &.current {
+          a {
+            background-color: $br_primary_4;
+
+            .notification {
+              &:after {
+                border-color: $br_primary_4;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .tab_content {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .tab_content,
+  .tabs_item {
+    height: 100%;
+  }
+
+  .tabs_item {
+    display: none;
+
+    &:first-child {
+      display: block;
+
+      @include xs {
+        display: none;
+      }
+    }
+
+  }
+
+
+  &__icon {
+    @include aic-jcc;
+    width: rem(30);
+    height: rem(25);
+
+    i {
+      font-size: rem(22);
+
+      &:before {
+        margin: 0;
+      }
+    }
+  }
+
+
+
+  &__item {
+    background-color: $neu_primary_6;
+    border-radius: rem(10);
+    margin-bottom: rem(15);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-top,
+  &__item-bottom {
+    @include aic-jfcsb;
+  }
+
+  &__item-top {
+    padding: rem(15px) rem(15) rem(10);
+
+    @include xs {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item-bottom {
+    padding: 0 rem(15) rem(15);
+
+    @include xs {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+  }
+
+  &__item-col {
+    @include fdc;
+    align-items: flex-start;
+    margin-right: 0;
+    width: auto !important;
+
+    &:last-child {
+      @include aife;
+
+      @include xs {
+        padding: 0;
+      }
+    }
+
+    @include xs {
+      width: 100% !important;
+      padding: rem(15);
+    }
+  }
+
+  .products__item-status {
+    display: inline-flex;
+  }
+
+  &__date {
+    color: $neu_primary_2;
+    @include regular_12;
+  }
+
+  &__order-name {
+    color: $neu_primary_1;
+    @include semibold_16;
+    position: relative;
+    margin-right: rem(40);
+
+    &:hover {
+      &:after {
+        left: calc(100% + 12px);
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: '\e805';
+      font-family: icon;
+      font-size: rem(20);
+      transition: $tr;
+      left: calc(100% + 9px);
+
+      @include xs {
+        display: none;
+      }
+    }
+  }
+
+  &__order-thumbs {
+    @include aic;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: rem(300);
+    min-width: rem(120);
+    width: 100%;
+
+
+    @include xs {
+      justify-content: flex-start;
+      max-width: 100%;
+      border-top: rem(1) solid $neu_primary_4;
+      padding: rem(8) rem(15);
+    }
+  }
+
+  &__order-thumb {
+    width: rem(40);
+    height: rem(40);
+    @include aic;
+    padding: rem(5);
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .cart {
+    .profile__order-name {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .profile__item {
+      border-bottom: rem(1) solid $neu_primary_4;
+      border-radius: 0;
+    }
+
+    .profile__item-top {
+      @include xs {
+        padding: rem(15px) rem(15) 0;
+      }
+    }
+
+    .profile__item-col {
+      align-items: flex-start;
+
+      @include xs {
+        padding: rem(15);
+      }
+
+    }
+  }
+
+  &__order-detail-info {
+    @include aifs-jfcsb;
+
+    @include lg {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    @include xs {
+      margin-top: rem(10);
+    }
+  }
+
+  &__info-order-recipient,
+  &__info-order-detail {
+    width: calc(50% - 20px);
+
+    @include lg {
+      width: 70%;
+    }
+
+    @include md {
+      width: 100%;
+    }
+  }
+
+  &__info-order-detail {
+    @include lg {
+      margin-top: rem(20);
+    }
+
+    ul {
+      padding-top: rem(20);
+      margin-bottom: rem(20);
+
+      li {
+        @include aic-jfcsb;
+        margin-bottom: rem(10);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          width: 50%;
+          @include regular_14;
+
+          &:first-child {
+            color: $neu_primary_2;
+          }
+        }
+      }
+    }
+
+    .delete-order-btn {
+      cursor: pointer;
+      transition: $tr;
+
+      &:hover {
+        color: $br_secondary_2;
+      }
+    }
+  }
+
+  &__recipient-item {
+    border-bottom: rem(1) solid $neu_primary_4;
+    color: $neu_primary_1;
+    @include regular_14;
+    width: 100%;
+    padding: rem(22) 0;
+  }
+
+  .order__form {
+    max-width: rem(575);
+    width: 100%;
+
+    @include sm {
+      max-width: 100%;
+    }
+
+    .btn {
+      max-width: rem(240);
+
+      @include xs {
+        max-width: 100%;
+      }
+
+      &.disabled {
+        color: $neu_primary_2;
+        background-color: $neu_primary_5;
+        box-shadow: none;
+        pointer-events: none;
+      }
+    }
+
+    .input {
+      &.textarea {
+        width: 100%;
+      }
+    }
+  }
+
+  .input {
+    position: relative;
+
+    @include md {
+      width: 100%;
+    }
+
+    .pass-controll {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem(10);
+      @include aic-jcc;
+      cursor: pointer;
+
+      i {
+        font-size: rem(22);
+      }
+
+      &.show-pass {
+        color: $neu_primary_3;
+      }
+
+      &.hide-pass {
+        display: none;
+      }
+    }
+  }
+
+  .select {
+    @include xs {
+      width: 100%;
+    }
+  }
+
+  .order__input-wrap {
+    margin-top: 0;
+  }
+
+  .password-form {
+    .order__input-wrap {
+      .input {
+        @include md {
+          width: 100% !important;
+        }
+
+        input {
+          padding-right: rem(40);
+
+          @include md {
+            width: 100% !important;
+          }
+        }
+
+        &:first-child {
+          width: 100%;
+
+          .pass-controll {
+            right: calc(50% + 18px);
+
+            @include md {
+              right: rem(9);
+            }
+          }
+
+          input {
+            width: calc(50% - 10px);
+          }
+        }
+
+        &:last-child {
+          width: calc(50% - 7px);
+        }
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: rem(20);
+    display: none;
+
+    @include xs {
+      display: block;
+    }
+  }
+
+  .back {
+    display: none;
+
+    @include xs {
+      display: block;
+    }
+
+    &--back {
+      display: block;
+    }
+  }
+}
+
+.pagination {
+  @include aic-jfcfe;
+  margin-top: rem(15);
+
+  span {
+    margin-right: rem(24);
+  }
+
+  &__item {
+    color: $neu_primary_1;
+    @include regular_14;
+    margin-right: rem(24);
+    transition: $tr;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &.active {
+      color: $br_secondary_2;
+    }
+
+    &.intermediate {
+      pointer-events: none;
+    }
+
+    &.disabled {
+      display: none;
+    }
+  }
+}
+
+.delete-order {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include aic-jcc;
+  opacity: 0;
+  transition: $tr;
+  pointer-events: none;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, .3);
+
+  &.open {
+    opacity: 1;
+    pointer-events: inherit;
+  }
+
+  &__window {
+    border-radius: rem(10);
+    box-shadow: 0px 5px 20px;
+    background-color: $neu_primary_6;
+    max-width: rem(375);
+    width: 100%;
+    padding: rem(15);
+
+    @include xs {
+      max-width: rem(295);
+    }
+  }
+
+  &__btn-wrap {
+    @include aic-jfcsb;
+    margin-top: rem(25);
+
+    .btn {
+      color: $neu_primary_1;
+      background-color: transparent;
+      box-shadow: none;
+      width: calc(50% - 5px);
+
+      &:hover {
+        background-color: $br_secondary_2;
+        color: $neu_primary_6;
+      }
+    }
+  }
+}

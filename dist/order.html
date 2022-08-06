@@ -359,24 +359,24 @@
                 <div class="header__controller-top">
                   <div class="header__controller-count-points">0</div>
                 </div>
-                <div class="header__controller-title">Баллов</div></a><a class="header__controller" href="#">
+                <div class="header__controller-title">Баллов</div></a><a class="header__controller">
                               <div class="header__controller-top">
                                 <div class="header__controller-icon"><i class="icon-ic_orders"></i>
                                 </div>
                               </div>
-                              <div class="header__controller-title">Заказы</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-title">Заказы</div></a><a class="header__controller">
                               <div class="header__controller-top">
                                 <div class="header__controller-icon">
                                   <div class="header__controller-count"><span>2</span></div><i class="icon-ic_favorite"></i>
                                 </div>
                               </div>
-                              <div class="header__controller-title">Избранное</div></a><a class="cart-js header__controller" href="#">
+                              <div class="header__controller-title">Избранное</div></a><a class="cart-js header__controller">
                               <div class="header__controller-top">
                                 <div class="header__controller-icon">
                                   <div class="header__controller-count"><span>6</span></div><i class="icon-ic_cart"></i>
                                 </div>
                               </div>
-                              <div class="header__controller-title">Корзина</div></a><a class="header__controller" href="#">
+                              <div class="header__controller-title">Корзина</div></a><a class="header__controller" href="profile.html">
                               <div class="header__controller-top">
                                 <div class="header__controller-icon"><i class="icon-ic_happy_profile"></i>
                                 </div>
@@ -417,10 +417,10 @@
             <h2 class="semibold_16">Адрес доставки </h2>
             <div class="order__input-wrap">
               <div class="input">
-                <input type="text" placeholder="Имя" name="Имя">
+                <input type="text" placeholder="Имя" name="Имя" id="name">
               </div>
               <div class="input">
-                <input class="phone-mask" type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон">
+                <input class="phone-mask" type="text" value="996" data-inputmask="'mask': '+999 999 999'" name="Телефон" id="phone">
               </div>
               <div class="select"> 
                 <div class="select__selected" data-val="Бишкек">Бишкек</div>
@@ -433,7 +433,7 @@
                 </div>
               </div>
               <div class="select"> 
-                <div class="select__selected" data-val="Выберите район">Выберите район</div>
+                <div class="select__selected" data-val="Район не выбран">Выберите район</div>
                 <div class="select__dropdown"> 
                   <div class="select__option" data-val="район1">район1</div>
                   <div class="select__option" data-val="район2">район2</div>
@@ -442,10 +442,10 @@
                 </div>
               </div>
               <div class="input">
-                <input type="text" placeholder="Улица" name="Улица">
+                <input type="text" placeholder="Улица" name="Улица" id="street">
               </div>
               <div class="input">
-                <input type="text" placeholder="Номер дома/кв." name="Номер дома/кв.">
+                <input type="text" placeholder="Номер дома/кв." name="Номер дома/кв." id="address">
               </div>
               <div class="input">
                 <textarea name="Примечание" placeholder="Примечание"></textarea>
