@@ -50,9 +50,9 @@ $(document).ready(function () {
   });
 
   if (window.matchMedia('(max-width: 575px)').matches) {
-    $('.tabs li').removeClass('current');
     $('.profile .tabs li').removeClass('current');
-    $('.tabs li a').on('click', function () {
+    $('.profile .tabs li').removeClass('current');
+    $('.profile .tabs li a').on('click', function () {
       $('.profile .profile__col:first-child').hide();
       $('.profile .profile__wrap').prev().hide();
     });

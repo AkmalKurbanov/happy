@@ -113,6 +113,12 @@ button {
       background-color: $br_secondary_3;
     }
   }
+  &.disabled {
+    color: $neu_primary_2;
+    background-color: $neu_primary_5;
+    box-shadow: none;
+    pointer-events: none;
+  }
 }
 
 // flex footer
@@ -468,6 +474,26 @@ form {
     }
   }
 
+  .pass-controll {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(10);
+    @include aic-jcc;
+    cursor: pointer;
+
+    i {
+      font-size: rem(22);
+    }
+
+    &.show-pass {
+      color: $neu_primary_3;
+    }
+
+    &.hide-pass {
+      display: none;
+    }
+  }
 
 }
 

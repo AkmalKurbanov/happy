@@ -2546,6 +2546,16 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
+.tal {
+  text-align: left;
+  display: block;
+}
+
+.tac {
+  text-align: center;
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -2682,6 +2692,14 @@ button {
 
 .btn--br_secondary_2:hover {
   background-color: #fc9f81;
+}
+
+.btn.disabled {
+  color: rgba(0,0,0,.65);
+  background-color: rgba(0,0,0,.05);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .wrapper {
@@ -3164,6 +3182,37 @@ form {
 .input.activation.active .input__icon {
   pointer-events: inherit;
   color: #19987a;
+}
+
+.input .pass-controll {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: .625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.input .pass-controll i {
+  font-size: 1.375rem;
+}
+
+.input .pass-controll.show-pass {
+  color: rgba(0,0,0,.35);
+}
+
+.input .pass-controll.hide-pass {
+  display: none;
 }
 
 .select {
@@ -7238,14 +7287,6 @@ form {
   }
 }
 
-.profile .order__form .btn.disabled {
-  color: rgba(0,0,0,.65);
-  background-color: rgba(0,0,0,.05);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  pointer-events: none;
-}
-
 .profile .order__form .input.textarea {
   width: 100%;
 }
@@ -7258,37 +7299,6 @@ form {
   .profile .input {
     width: 100%;
   }
-}
-
-.profile .input .pass-controll {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: .625rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.profile .input .pass-controll i {
-  font-size: 1.375rem;
-}
-
-.profile .input .pass-controll.show-pass {
-  color: rgba(0,0,0,.35);
-}
-
-.profile .input .pass-controll.hide-pass {
-  display: none;
 }
 
 @media (max-width:575.98px) {
@@ -7481,6 +7491,256 @@ form {
 .delete-order__btn-wrap .btn:hover {
   background-color: #fc5230;
   color: #fff;
+}
+
+.auth,.confirm,.forgot,.password {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth.open,.confirm.open,.forgot.open,.password.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.auth .auth__wrap,.auth .container,.confirm .auth__wrap,.confirm .container,.forgot .auth__wrap,.forgot .container,.password .auth__wrap,.password .container {
+  height: 100%;
+}
+
+.auth .btn,.confirm .btn,.forgot .btn,.password .btn {
+  margin-top: 1.5rem;
+}
+
+@media (max-width:575.98px) {
+  .auth .btn,  .confirm .btn,  .forgot .btn,  .password .btn {
+    margin-top: .9375rem;
+  }
+}
+
+.auth .form,.confirm .form,.forgot .form,.password .form {
+  max-width: 21.5625rem;
+  width: 100%;
+  text-align: center;
+}
+
+.auth .form .input,.confirm .form .input,.forgot .form .input,.password .form .input {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width:575.98px) {
+  .auth .form .input,  .confirm .form .input,  .forgot .form .input,  .password .form .input {
+    margin-bottom: .9375rem;
+  }
+}
+
+.auth {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.auth__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.auth .tabs {
+  background-color: rgba(0,0,0,.05);
+  border-radius: 2.5rem;
+  padding: .25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.auth .tabs li {
+  width: 50%;
+  text-align: center;
+}
+
+.auth .tabs li a {
+  border-radius: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 2rem;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: rgba(0,0,0,.65);
+  position: relative;
+}
+
+.auth .tabs li a:hover {
+  color: #000;
+}
+
+.auth .tabs li a:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0;
+  border-radius: 2.5rem;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.auth .tabs li a span {
+  position: relative;
+  z-index: 1;
+}
+
+.auth .tabs li:first-child a:before {
+  left: 100%;
+}
+
+.auth .tabs li:first-child.current a:before {
+  left: 0;
+}
+
+.auth .tabs li:last-child a:before {
+  right: 100%;
+}
+
+.auth .tabs li:last-child.current a:before {
+  right: 0;
+}
+
+.auth .tabs li.current a {
+  color: #000;
+}
+
+.auth .tabs li.current a:before {
+  opacity: 1;
+}
+
+.auth__logo {
+  width: 5rem;
+  margin: 2.5rem auto 1.5rem;
+}
+
+@media (max-width:575.98px) {
+  .auth__logo {
+    width: 4.375rem;
+    margin: .9375rem auto;
+  }
+}
+
+.auth .tabs_item {
+  display: none;
+}
+
+.auth .tabs_item:first-child {
+  display: block;
+}
+
+.auth .google-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 1.25rem;
+  min-height: 2.375rem;
+  padding: .5625rem;
+  background-color: #fff;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.auth .google-login svg {
+  position: absolute;
+  left: .625rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.auth .or {
+  position: relative;
+  margin: 1.5rem 0;
+  display: inline-block;
+}
+
+@media (max-width:575.98px) {
+  .auth .or {
+    margin: .9375rem 0;
+  }
+}
+
+.auth .or:after,.auth .or:before {
+  position: absolute;
+  content: '';
+  height: .0625rem;
+  width: 5rem;
+  background-color: rgba(0,0,0,.1);
+  top: 50%;
+}
+
+.auth .or:before {
+  left: calc(100% + 25px);
+}
+
+.auth .or:after {
+  right: calc(100% + 25px);
 }
 
 .brands {

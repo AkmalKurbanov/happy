@@ -25,7 +25,8 @@
   display: flex;
   justify-content: center;
 }
-.jcc{
+
+.jcc {
   @include jcc;
 }
 
@@ -75,7 +76,8 @@
   display: flex;
   flex-direction: column;
 }
-.fdc{
+
+.fdc {
   @include fdc;
 }
 
@@ -169,3 +171,17 @@
   justify-content: flex-start;
 }
 
+.tal {
+  text-align: left;
+  display: block;
+}
+
+.tac {
+  text-align: center;
+  display: block;
+}
+
+.tar {
+  text-align: right;
+  display: block;
+}
