@@ -438,7 +438,7 @@
         max-width: 100%;
       }
 
-      
+
     }
 
     .input {
@@ -453,7 +453,7 @@
 
     @include md {
       width: 100%;
-    }    
+    }
   }
 
   .select {
@@ -529,6 +529,7 @@
 .pagination {
   @include aic-jfcfe;
   margin-top: rem(15);
+  width: 100%;
 
   span {
     margin-right: rem(24);

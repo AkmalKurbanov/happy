@@ -223,7 +223,7 @@
 
       &.toggle-fade {
         z-index: 8;
-
+        
         @include lg {
           flex-direction: column;
           align-items: flex-start;
@@ -238,7 +238,7 @@
           opacity: 0;
           pointer-events: none;
           transition: $tr;
-
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
           li {
             margin-right: 0 !important;
             padding: rem(5) rem(15);

@@ -1,0 +1,357 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      .catalog
+        .container
+          h2.semibold_28.neu_primary_1 Компьютеры
+          br
+          .catalog__wrap
+            .catalog__col
+              .catalog__filter
+                .catalog__filter-block  
+                  .catalog__filter-search
+                    input(type="text" placeholder="Найти категорию")
+                  .catalog__filter-list-wrap  
+                    .catalog__filter-list
+                      ul  
+                        li.catalog__filter-item
+                          .catalog__filter-item-wrap 
+                            input(type="checkbox" id="all")
+                            span 
+                            label(for="all") Все
+                        li.catalog__filter-item 
+                          .catalog__filter-item-wrap 
+                            input(type="checkbox" id="electronics")
+                            span 
+                            label(for="electronics") Электроника
+                          .catalog__trigger-dropdown
+                            i.icon-ic_arrow_down_small
+                          ul.catalog__filter-dropdown 
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="smartphones")
+                                span 
+                                label(for="smartphones") Смартфоны
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="computers-laptops")
+                                span 
+                                label(for="computers-laptops") Компьютеры и ноутбуки
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap  
+                                input(type="checkbox" id="wireless-headphones")
+                                span 
+                                label(for="wireless-headphones") Беспроводные наушники
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="tablets")
+                                span 
+                                label(for="tablets") Планшеты
+                            .more-item.regular_14 Еще
+                        li.catalog__filter-item 
+                          .catalog__filter-item-wrap 
+                            input(type="checkbox" id="clothing")
+                            span 
+                            label(for="clothing") Одежда
+                          .catalog__trigger-dropdown
+                            i.icon-ic_arrow_down_small
+                          ul.catalog__filter-dropdown 
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="clothing1")
+                                span 
+                                label(for="clothing1") Одежда1
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="clothing2")
+                                span 
+                                label(for="clothing2") Одежда2
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap  
+                                input(type="checkbox" id="clothing3")
+                                span 
+                                label(for="clothing3") Одежда3
+                            li.catalog__filter-item
+                              .catalog__filter-item-wrap 
+                                input(type="checkbox" id="clothing4")
+                                span 
+                                label(for="clothing4") Одежда4
+                            .more-item.regular_14 Еще
+                           
+                    
+                        
+                h3.medium_14.neu_primary_1 Цена           
+                br
+                .catalog__price 
+                  .input
+                    input(type="text" placeholder="от 2 190")
+                  .input
+                    input(type="text" placeholder="до 1 792 000")
+                br
+                h3.medium_14.neu_primary_1 Производитель
+                br
+                .catalog__filter-block
+                  .catalog__filter-search
+                    input(type="text" placeholder="Найти производителя")
+                  .catalog__filter-list-wrap
+                    .catalog__filter-list
+                      ul
+                        mixin manufacturer(name) 
+                          li.catalog__filter-item.catalog__filter-item--check 
+                            .catalog__filter-item-wrap 
+                              input(type="checkbox" id=name)
+                              span 
+                              label(for=name)=name        
+                        +manufacturer('Apple')
+                        +manufacturer('Asus')
+                        +manufacturer('Acer')
+                        +manufacturer('Dell')
+                        +manufacturer('Lenovo')
+                        +manufacturer('LG')
+                        +manufacturer('HP')
+                        +manufacturer('Razor')
+                        +manufacturer('Samsung')
+                        +manufacturer('Xiaomi')
+                              
+
+                              
+            .catalog__col
+              .catalog__control
+                .catalog__control-wrap
+                  .catalog__control-col
+                    .catalog__control-item-wrap
+                      .catalog__control-item-selected(data-val="Сначала дешёвые")
+                        div Сначала дешёвые
+                      .catalog__control-item-list
+                        a(href="#").catalog__control-item.active(data-val="Сначала дешёвые") Сначала дешёвые
+                        a(href="#").catalog__control-item(data-val="Сначала дороже") Сначала дороже
+                        a(href="#").catalog__control-item(data-val="По новизне") По новизне
+                  .catalog__control-col
+                    .catalog__control-item-wrap
+                      .catalog__control-item-selected(data-val="20") 
+                        div 20
+                        span  товаров
+                      p.regular_14.neu_primary_2 Показать товаров:
+                      .catalog__control-item-list
+                        a(href="#").catalog__control-item.active(data-val="20") 20 
+                        a(href="#").catalog__control-item(data-val="30") 30
+                        a(href="#").catalog__control-item(data-val="50") 50
+                .catalog__filter-trigger
+                  i.icon-ic_filter
+              .empty(style="display: none;")
+                  h3.semibold_20.neu_primary_1 Товаров не найдено.
+              .products
+                .products__item.products__item--additional
+                mixin product(img,price,percent,desc,newProd,hit,cashback,favorite,btn)
+                  .products__item
+                    div
+                      .products__item-top
+                        .products__item-top-elements
+                          div
+                            if newProd === 'newprod-none'
+                            else
+                              .products__item-status.products__item-status--br_tertiary_2=newProd
+                            if hit === 'hit-none'
+                            else
+                              .products__item-status.products__item-status--br_secondary_2=hit
+                            
+                            if cashback === 'cashback-none'
+                            else
+                              .products__item-status.products__item-status--br_primary_1=cashback
+                        if favorite === 'favorite-none'
+                          button.products__item-favorite
+                        else    
+                          button(class='products__item-favorite products__item-favorite--'+favorite)
+                        a(href="#").products__item-img
+                          img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, onerror="this.src='assets/img/default-img.webp'" alt="").lazy
+                      .products__item-price                                                                                                                      
+                        if percent === 'percent-none'
+                        else
+                          .discount-price
+                            s.irrelevant=price
+                              | сом
+                            span.discount -
+                              span(data-val=percent)=percent  
+                              |%
+                        .actual-price(data-val=price)
+                          span=price
+                          | сом
+                      .products__item-desc=desc
+                    if btn === 'basket'
+                      .products__item-btn
+                        button.add-to-basket В корзину
+                        .products__item-counter
+                          .products__item-counter-trash
+                            i.icon-ic_trash
+                          input.count-minus(type='button' value='-')
+                          span
+                            input.counter(type='number' value='0')
+                            | шт.
+                          input.count-plus(type='button' value='+')
+                    else if btn === 'not-available'
+                      .products__item-btn
+                        .not-available Нет в наличии
+                        
+                    
+                +product('product1.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','Новинка','Хит','cashback-none', 'favorite-none','basket')    
+                +product('product2.webp','29400','percent-none','Умные очки Amazon Echo Frames Alexa (2-го поколения) Классический','Новинка','hit-none','cashback-none','added','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                +product('product5.webp','33614 ','33','Беспроводные наушники Beats Solo Pro, бежевый','Новинка','hit-none','cashback-none','favorite-none','basket')    
+                
+                .pagination
+                  span Страницы:
+                  .pagination__item.disabled
+                    i.icon-ic_arrow_left
+                  .pagination__item.active 1
+                  .pagination__item 2
+                  .pagination__item 3
+                  .pagination__item.intermediate ...
+                  .pagination__item 9
+                  .pagination__item
+                    i.icon-ic_arrow_right
+               
+      
+    .filter
+      .container  
+        .close-btn
+        .filter__wrap
+          h2.semibold_20.neu_primary_1 Фильтры  
+          br
+          .filter__list
+            .filter__item.active.category-mobile-js 
+              .filter__item-name Категория 
+              span Компьютеры
+            .filter__item.price-mobile-js
+              .filter__item-name Цена
+              span Любая
+            .filter__item.active.brand-mobile-js
+              .filter__item-name Бренд 
+              span Apple
+    .category-mobile
+      .container  
+        .close-btn
+        .filter__wrap
+          h2.semibold_20.neu_primary_1.back Категории
+          br
+          .catalog__filter-block  
+            .catalog__filter-search
+              input(type="text" placeholder="Найти категорию")
+            .catalog__filter-list-wrap  
+              .catalog__filter-list
+                ul  
+                  li.catalog__filter-item
+                    .catalog__filter-item-wrap 
+                      input(type="checkbox" id="all")
+                      span 
+                      label(for="all") Все
+                  li.catalog__filter-item 
+                    .catalog__filter-item-wrap 
+                      input(type="checkbox" id="electronics")
+                      span 
+                      label(for="electronics") Электроника
+                    .catalog__trigger-dropdown
+                      i.icon-ic_arrow_down_small
+                    ul.catalog__filter-dropdown 
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="smartphones")
+                          span 
+                          label(for="smartphones") Смартфоны
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="computers-laptops")
+                          span 
+                          label(for="computers-laptops") Компьютеры и ноутбуки
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap  
+                          input(type="checkbox" id="wireless-headphones")
+                          span 
+                          label(for="wireless-headphones") Беспроводные наушники
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="tablets")
+                          span 
+                          label(for="tablets") Планшеты
+                      .more-item.regular_14 Еще
+                  li.catalog__filter-item 
+                    .catalog__filter-item-wrap 
+                      input(type="checkbox" id="clothing")
+                      span 
+                      label(for="clothing") Одежда
+                    .catalog__trigger-dropdown
+                      i.icon-ic_arrow_down_small
+                    ul.catalog__filter-dropdown 
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="clothing1")
+                          span 
+                          label(for="clothing1") Одежда1
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="clothing2")
+                          span 
+                          label(for="clothing2") Одежда2
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap  
+                          input(type="checkbox" id="clothing3")
+                          span 
+                          label(for="clothing3") Одежда3
+                      li.catalog__filter-item
+                        .catalog__filter-item-wrap 
+                          input(type="checkbox" id="clothing4")
+                          span 
+                          label(for="clothing4") Одежда4
+                      .more-item.regular_14 Еще
+
+
+    .price-mobile
+      .container  
+        .close-btn
+        .price-mobile__wrap
+          h2.semibold_20.neu_primary_1.back Цена
+          br
+          .catalog__price 
+            .input
+              input(type="text" placeholder="от 2 190")
+            .input
+              input(type="text" placeholder="до 1 792 000")
+    
+    .brand-mobile
+      .container  
+        .close-btn
+        .brand-mobile__wrap
+          h2.semibold_20.neu_primary_1.back Бренд
+          br
+          .catalog__filter-block
+            .catalog__filter-search
+              input(type="text" placeholder="Найти производителя")
+            .catalog__filter-list-wrap
+              .catalog__filter-list
+                ul
+                  +manufacturer('Apple')
+                  +manufacturer('Asus')
+                  +manufacturer('Acer')
+                  +manufacturer('Dell')
+                  +manufacturer('Lenovo')
+                  +manufacturer('LG')
+                  +manufacturer('HP')
+                  +manufacturer('Razor')
+                  +manufacturer('Samsung')
+                  +manufacturer('Xiaomi')
+    
+    include includes/footer/footer
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog
+    include includes/auth
+  
+  
+  include includes/scripts
