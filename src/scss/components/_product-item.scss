@@ -10,6 +10,10 @@
 
   .swiper-slide {
     height: auto !important;
+
+    .products__item {
+      height: 100%;
+    }
   }
 
   &__item {

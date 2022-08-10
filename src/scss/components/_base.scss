@@ -113,6 +113,7 @@ button {
       background-color: $br_secondary_3;
     }
   }
+
   &.disabled {
     color: $neu_primary_2;
     background-color: $neu_primary_5;
@@ -495,6 +496,11 @@ form {
     }
   }
 
+  .invalid-feedback {
+    text-align: left!important;
+    position: absolute!important;
+    font-size: rem(12)!important;
+  }
 }
 
 .select {
@@ -535,6 +541,12 @@ form {
     pointer-events: none;
     left: 0;
     z-index: 2;
+    max-height: rem(150);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &.open {
       top: calc(100% + 5px);

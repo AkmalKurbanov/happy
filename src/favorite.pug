@@ -1,0 +1,90 @@
+extends layout/main/main
+block title
+  | favorite
+block main
+  .wrapper
+    include includes/cart
+    .content
+      include includes/header/header
+      .catalog.favorite
+        .container
+          section.section
+            .section__col
+              h2.semibold_28.neu_primary_1 Избранное
+              .share
+                .regular_16.neu_primary_2 Поделиться 
+                ul 
+                  mixin share(icon, link)
+                    li 
+                      a(href="#")
+                        img(src="assets/img/"+icon+".webp", alt="")   
+                  +share('whatsapp')   
+                  +share('instagram')   
+                  +share('telegram')   
+                  +share('link')   
+            .section__col
+              .products
+                mixin product(img,price,percent,desc,newProd,hit,cashback,favorite,btn)
+                  .products__item
+                    div
+                      .products__item-top
+                        .products__item-top-elements
+                          div
+                            if newProd === 'newprod-none'
+                            else
+                              .products__item-status.products__item-status--br_tertiary_2=newProd
+                            if hit === 'hit-none'
+                            else
+                              .products__item-status.products__item-status--br_secondary_2=hit
+                            
+                            if cashback === 'cashback-none'
+                            else
+                              .products__item-status.products__item-status--br_primary_1=cashback
+                        if favorite === 'favorite-none'
+                          button.products__item-favorite
+                        else    
+                          button(class='products__item-favorite products__item-favorite--'+favorite)
+                        a(href="#").products__item-img
+                          img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src='assets/img/'+img, onerror="this.src='assets/img/default-img.webp'" alt="").lazy
+                      .products__item-price                                                                                                                      
+                        if percent === 'percent-none'
+                        else
+                          .discount-price
+                            s.irrelevant=price
+                              | сом
+                            span.discount -
+                              span(data-val=percent)=percent  
+                              |%
+                        .actual-price(data-val=price)
+                          span=price
+                          | сом
+                      .products__item-desc=desc
+                    if btn === 'basket'
+                      .products__item-btn
+                        button.add-to-basket В корзину
+                        .products__item-counter
+                          .products__item-counter-trash
+                            i.icon-ic_trash
+                          input.count-minus(type='button' value='-')
+                          span
+                            input.counter(type='number' value='0')
+                            | шт.
+                          input.count-plus(type='button' value='+')
+                    else if btn === 'not-available'
+                      .products__item-btn
+                        .not-available Нет в наличии
+                        
+                    
+                +product('product1.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','newprod-none','hit-none','cashback-none', 'added','basket')  
+                +product('product2.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','newprod-none','hit-none','cashback-none', 'added','basket')  
+                +product('product3.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','newprod-none','hit-none','cashback-none', 'added','basket')  
+                +product('product4.webp','14450','9','Беспроводные наушники Apple AirPods 3, белый','newprod-none','hit-none','cashback-none', 'added','basket')  
+              
+    include includes/footer/footer
+    include includes/preloader
+    include includes/mobile-nav
+    include includes/catalog
+    include includes/auth
+  
+  
+  include includes/scripts

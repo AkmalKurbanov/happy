@@ -1,0 +1,32 @@
+.information {
+  padding: rem(60) 0;
+  max-width: rem(720);
+  width: 100%;
+  margin: auto;
+  @include xs {
+    padding: rem(30) 0;
+  }
+
+  &__title {
+    padding-bottom: rem(15);
+    margin-bottom: rem(15);
+    border-bottom: rem(1) solid $neu_primary_4;
+    @include semibold_28;
+  }
+
+  &__subtitle {
+    margin-bottom: rem(15);
+    @include semibold_16;
+    color: $neu_primary_1;  
+  }
+
+  p {
+    @include regular_16;
+    margin-bottom: rem(15);
+  }
+
+  img {
+    border-radius: rem(10);
+    margin-bottom: rem(15);
+  }
+}

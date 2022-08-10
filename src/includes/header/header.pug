@@ -1,7 +1,7 @@
 header.header
   .header__top.container 
     .header__col
-      a(href="#").logo
+      a(href="/").logo
         img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/logo.svg", alt="").lazy
     .header__col
       form(action="")
@@ -40,7 +40,7 @@ header.header
               i(class='icon-ic_'+icon)
           .header__controller-title=title
         +controller('orders','Заказы','')
-        +controller('favorite','Избранное',2)
+        +controller('favorite','Избранное',2,'','favorite.html')
         +controller('cart','Корзина', 6, 'cart-js')
         //- +controller('happy_profile','Профиль','','','profile.html')
         +controller('happy_profile','Войти','','log-in','#')

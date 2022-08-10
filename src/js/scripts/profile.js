@@ -23,18 +23,6 @@ $(document).ready(function () {
   });
 
   $(function () {
-    $('.profile .order__form input').on('keyup', function () {
-      let name = $('.profile .order__form #name');
-      let phone = $('.profile .order__form #phone');
-      let street = $('.profile .order__form #street');
-      let address = $('.profile .order__form #address');
-      if (name.val() != '' && phone.val() != '' && street.val() != '' && address.val() != '') {
-        $('.profile .order__form .btn').removeClass('disabled');
-      } else {
-        $('.profile .order__form .btn').addClass('disabled');
-      }
-    });
-
     $('.show-pass').on('click', function () {
       $(this).parent().find('input').focus();
       $(this).parent().find('input').attr('type', 'text');
