@@ -131,18 +131,17 @@ block main
                       .cart__item-control
                       .products__item-price
                         div
-                          .discount-price
-                            s.irrelevant
-                              span.crossed_12=actualprice  
-                              | сом
-                            span.discount
-                              span(data-val=discount)
-                          .actual-price(data-val=actualprice)
-                            span.medium_14 
+                          .actual-price(data-val='134499')
+                            span.medium_14  134499
                             | сом
-                        .order__count.regular_12.neu_primary_2      
-                          =val
-                          |  шт.
+                        div
+                          .products__item-counter
+                            input.count-minus(type='button' value='-' data-id='2484' data-shop_id='5')
+                            span
+                              input.counter(type='number')
+                              | шт.
+                            input.count-plus(type='button' value='+' data-id='2484' data-shop_id='5')
+
      
            
             
@@ -203,7 +202,7 @@ block main
                     a(href='#') 9 мес
                   li
                     a(href='#') 12 мес
-                  span.runner
+                  
               .tab_content
                 mixin tab(modify)
                   .tabs_item
@@ -261,7 +260,7 @@ block main
                     a(href='#') 9 мес
                   li
                     a(href='#') 12 мес
-                  span.runner
+                  
               .tab_content
                 +tab('')
                 +tab('')

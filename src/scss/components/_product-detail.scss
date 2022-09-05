@@ -450,6 +450,12 @@
     margin-left: rem(20);
     min-width: rem(40);
     height: rem(40);
+
+    &.active {
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 
   .products__item-btn {
@@ -483,13 +489,13 @@
   }
 
   .tabs {
-    @include aic;
+    @include aic-jfcsb;
     position: relative;
 
 
     li {
       @include aic-jcc;
-      max-width: 25%;
+      max-width: rem(60);
       width: 100%;
       height: rem(28);
 
@@ -498,7 +504,10 @@
         color: $neu_primary_2;
         position: relative;
         z-index: 1;
-
+        @include aic-jcc;
+        width: 100%;
+        height: 100%;
+        padding: 0 rem(3);
         @include lg {
           font-size: rem(13);
         }
@@ -511,6 +520,9 @@
       &.current {
         a {
           color: $neu_primary_1;
+          background-color: $neu_primary_6;
+          border-radius: rem(40);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
         }
       }
 
@@ -534,31 +546,6 @@
 
     }
 
-    .runner {
-      position: absolute;
-      pointer-events: none;
-      transition: all 0.5s cubic-bezier(1, 0.01, 0, 1.22);
-      z-index: 0;
-      max-width: 25%;
-      width: 100%;
-      height: rem(28);
-
-
-      &:before {
-        position: absolute;
-        content: "";
-        pointer-events: none;
-        max-width: 100%;
-        width: 100%;
-        height: rem(28);
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: rem(40);
-        background-color: $neu_primary_6;
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
-
-      }
-    }
   }
 
   .tabs_item {

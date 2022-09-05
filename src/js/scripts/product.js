@@ -1,23 +1,16 @@
 $(document).ready(function () {
-  $('.products__item, .product-detail__price-block, .cart__item').each(function (index) {
-    let price = Number($.trim($(this).find('.actual-price').attr('data-val')));
-    let percent = Number($.trim($(this).find('.discount span').attr('data-val')));
-    let percentSum = (price * percent / 100);
-    let totalPrice = (price - percentSum).toFixed();
-    $(this).find('.actual-price span').html(totalPrice);
-  });
   $('.add-to-basket').on('click', function () {
     $(this).next().find('.counter').val() + 1;
     $(this).parent().find(".count-plus").trigger("click");
   });
-  $(document).on('click', '.products__item .count-plus', function () {
+  $(document).on('click', '.products__item .count-plus, .product-detail .count-plus', function () {
     $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
     if ($(this).prev().find('.counter').val() >= 2) {
       $(this).parent().find('.count-minus').show();
       $(this).parent().find('.products__item-counter-trash').hide();
     }
   });
-  $(document).on('click', '.products__item .count-minus', function () {
+  $(document).on('click', '.products__item .count-minus, .product-detail .count-minus', function () {
     if ($(this).next().find('.counter').val() <= 2) {
       $(this).prev().show();
       $(this).hide();
@@ -81,6 +74,21 @@ $(document).ready(function () {
         slidesPerView: 4,
         spaceBetween: 10,
       },
+    }
+  });
+
+
+
+
+
+  $(document).on('click', '.cart__item .count-plus', function () {
+    $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
+    $(this).parent().find('.count-minus').css('pointer-events', 'inherit');
+  });
+  $(document).on('click', '.cart__item .count-minus', function () {
+    $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
+    if ($(this).next().find('.counter').val() < 2) {
+      $(this).css('pointer-events', 'none');
     }
   });
 
