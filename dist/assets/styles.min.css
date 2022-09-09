@@ -20,11 +20,6 @@ h1 {
   margin: .67em 0;
 }
 
-pre {
-  font-family: monospace,monospace;
-  font-size: 1em;
-}
-
 a {
   background-color: transparent;
 }
@@ -40,17 +35,6 @@ code {
 
 small {
   font-size: 80%;
-}
-
-sub {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
 }
 
 img {
@@ -331,10 +315,6 @@ template {
   --swiper-navigation-color: #ffffff;
 }
 
-.swiper-button-next.swiper-button-black,.swiper-button-prev.swiper-button-black {
-  --swiper-navigation-color: #000000;
-}
-
 .swiper-button-lock {
   display: none;
 }
@@ -496,10 +476,6 @@ button.swiper-pagination-bullet {
   --swiper-pagination-color: #ffffff;
 }
 
-.swiper-pagination-black {
-  --swiper-pagination-color: #000000;
-}
-
 .swiper-pagination-lock {
   display: none;
 }
@@ -585,10 +561,6 @@ button.swiper-pagination-bullet {
 
 .swiper-lazy-preloader-white {
   --swiper-preloader-color: #fff;
-}
-
-.swiper-lazy-preloader-black {
-  --swiper-preloader-color: #000;
 }
 
 @keyframes swiper-preloader-spin {
@@ -746,13 +718,6 @@ button.swiper-pagination-bullet {
   z-index: 100;
   overflow: hidden;
   background: #fff;
-}
-
-.easyzoom--overlay .easyzoom-flyout {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .easyzoom--adjacent .easyzoom-flyout {
@@ -1549,28 +1514,6 @@ button.swiper-pagination-bullet {
   --mm-color-text-dimmed: rgb(0 0 0 / 0.7);
   --mm-color-background-highlight: rgb(0 0 0 / 0.07);
   --mm-color-background-emphasis: rgb(0 0 0 / 0.035);
-  --mm-color-focusring: #06c;
-}
-
-.mm-menu--theme-black {
-  --mm-color-background: #000;
-  --mm-color-border: rgb(255 255 255 / 0.2);
-  --mm-color-icon: rgb(255 255 255 / 0.4);
-  --mm-color-text: rgb(255 255 255 / 0.7);
-  --mm-color-text-dimmed: rgb(255 255 255 / 0.4);
-  --mm-color-background-highlight: rgb(255 255 255 / 0.1);
-  --mm-color-background-emphasis: rgb(255 255 255 / 0.06);
-  --mm-color-focusring: #06c;
-}
-
-.mm-menu--theme-black-contrast {
-  --mm-color-background: #000;
-  --mm-color-border: rgb(255 255 255 / 0.5);
-  --mm-color-icon: rgb(255 255 255 / 0.5);
-  --mm-color-text: #fff;
-  --mm-color-text-dimmed: rgb(255 255 255 / 0.6);
-  --mm-color-background-highlight: rgb(255 255 255 / 0.125);
-  --mm-color-background-emphasis: rgb(255 255 255 / 0.1);
   --mm-color-focusring: #06c;
 }
 
@@ -4382,7 +4325,7 @@ form {
   pointer-events: inherit;
 }
 
-#preloader {
+.preloader {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4407,12 +4350,207 @@ form {
   pointer-events: none;
 }
 
-#preloader.close {
+.preloader.close {
   opacity: 0;
 }
 
-#preloader svg {
+.preloader svg {
   width: 10rem!important;
+}
+
+.preloader__loader {
+  position: relative;
+}
+
+.preloader__loader-eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  position: relative;
+}
+
+.preloader__eye {
+  border-radius: 100%;
+  background-color: #1c3f3a;
+  width: .4375rem;
+  height: .4375rem;
+  display: block;
+  margin-left: .5rem;
+}
+
+.preloader__eye:first-child {
+  margin-left: 0;
+  -webkit-animation: 2s infinite .5s first;
+  animation: 2s infinite .5s first;
+}
+
+.preloader__eye:last-child {
+  -webkit-animation: 2s infinite .5s last;
+  animation: 2s infinite .5s last;
+}
+
+@-webkit-keyframes first {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  40% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes first {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  40% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes last {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  40% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes last {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  40% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.preloader__smile {
+  position: absolute;
+  -webkit-transform: translateX(-45%) rotate(0);
+  -ms-transform: translateX(-45%) rotate(0);
+  transform: translateX(-45%) rotate(0);
+  left: 50%;
+  bottom: 0;
+  height: 100%;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-animation: 2s infinite rotate;
+  animation: 2s infinite rotate;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translateX(-45%) rotate(0);
+    transform: translateX(-45%) rotate(0);
+  }
+
+  50% {
+    -webkit-transform: translateX(-45%) rotate(-20deg);
+    transform: translateX(-45%) rotate(-20deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-45%) rotate(360deg);
+    transform: translateX(-45%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translateX(-45%) rotate(0);
+    transform: translateX(-45%) rotate(0);
+  }
+
+  50% {
+    -webkit-transform: translateX(-45%) rotate(-20deg);
+    transform: translateX(-45%) rotate(-20deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-45%) rotate(360deg);
+    transform: translateX(-45%) rotate(360deg);
+  }
+}
+
+.preloader__smile svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .header {
