@@ -134,6 +134,11 @@ button {
 
   .content {
     flex: 1 0 auto;
+    padding-top: rem(160);
+
+    @include xs {
+      padding-top: 0;
+    }
   }
 }
 
@@ -497,9 +502,9 @@ form {
   }
 
   .invalid-feedback {
-    text-align: left!important;
-    position: absolute!important;
-    font-size: rem(12)!important;
+    text-align: left !important;
+    position: absolute !important;
+    font-size: rem(12) !important;
   }
 }
 

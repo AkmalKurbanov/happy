@@ -19,19 +19,19 @@ $(document).ready(function () {
       $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
     }
   });
-  $(document).on('click', '.slide-panel .count-plus', function () {
-    $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
-    if ($(this).prev().find('.counter').val() == 2) {
-      $(this).parent().find('.count-minus').css('pointer-events', 'inherit');
-    }
-  });
-  $(document).on('click', '.slide-panel .count-minus', function () {
-    $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
+  // $(document).on('click', '.slide-panel .count-plus', function () {
+  //   $(this).prev().find('.counter').val(+$(this).prev().find('.counter').val() + 1);
+  //   if ($(this).prev().find('.counter').val() == 2) {
+  //     $(this).parent().find('.count-minus').css('pointer-events', 'inherit');
+  //   }
+  // });
+  // $(document).on('click', '.slide-panel .count-minus', function () {
+  //   $(this).next().find('.counter').val(+$(this).next().find('.counter').val() - 1);
 
-    if ($(this).next().find('.counter').val() == 1) {
-      $(this).css('pointer-events', 'none');
-    }
-  });
+  //   if ($(this).next().find('.counter').val() == 1) {
+  //     $(this).css('pointer-events', 'none');
+  //   }
+  // });
 
 
 

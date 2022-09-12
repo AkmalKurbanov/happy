@@ -20,6 +20,11 @@ h1 {
   margin: .67em 0;
 }
 
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
 a {
   background-color: transparent;
 }
@@ -35,6 +40,17 @@ code {
 
 small {
   font-size: 80%;
+}
+
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
 }
 
 img {
@@ -315,6 +331,10 @@ template {
   --swiper-navigation-color: #ffffff;
 }
 
+.swiper-button-next.swiper-button-black,.swiper-button-prev.swiper-button-black {
+  --swiper-navigation-color: #000000;
+}
+
 .swiper-button-lock {
   display: none;
 }
@@ -476,6 +496,10 @@ button.swiper-pagination-bullet {
   --swiper-pagination-color: #ffffff;
 }
 
+.swiper-pagination-black {
+  --swiper-pagination-color: #000000;
+}
+
 .swiper-pagination-lock {
   display: none;
 }
@@ -561,6 +585,10 @@ button.swiper-pagination-bullet {
 
 .swiper-lazy-preloader-white {
   --swiper-preloader-color: #fff;
+}
+
+.swiper-lazy-preloader-black {
+  --swiper-preloader-color: #000;
 }
 
 @keyframes swiper-preloader-spin {
@@ -718,6 +746,13 @@ button.swiper-pagination-bullet {
   z-index: 100;
   overflow: hidden;
   background: #fff;
+}
+
+.easyzoom--overlay .easyzoom-flyout {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .easyzoom--adjacent .easyzoom-flyout {
@@ -1514,6 +1549,28 @@ button.swiper-pagination-bullet {
   --mm-color-text-dimmed: rgb(0 0 0 / 0.7);
   --mm-color-background-highlight: rgb(0 0 0 / 0.07);
   --mm-color-background-emphasis: rgb(0 0 0 / 0.035);
+  --mm-color-focusring: #06c;
+}
+
+.mm-menu--theme-black {
+  --mm-color-background: #000;
+  --mm-color-border: rgb(255 255 255 / 0.2);
+  --mm-color-icon: rgb(255 255 255 / 0.4);
+  --mm-color-text: rgb(255 255 255 / 0.7);
+  --mm-color-text-dimmed: rgb(255 255 255 / 0.4);
+  --mm-color-background-highlight: rgb(255 255 255 / 0.1);
+  --mm-color-background-emphasis: rgb(255 255 255 / 0.06);
+  --mm-color-focusring: #06c;
+}
+
+.mm-menu--theme-black-contrast {
+  --mm-color-background: #000;
+  --mm-color-border: rgb(255 255 255 / 0.5);
+  --mm-color-icon: rgb(255 255 255 / 0.5);
+  --mm-color-text: #fff;
+  --mm-color-text-dimmed: rgb(255 255 255 / 0.6);
+  --mm-color-background-highlight: rgb(255 255 255 / 0.125);
+  --mm-color-background-emphasis: rgb(255 255 255 / 0.1);
   --mm-color-focusring: #06c;
 }
 
@@ -2666,6 +2723,13 @@ button {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  padding-top: 10rem;
+}
+
+@media (max-width:575.98px) {
+  .wrapper .content {
+    padding-top: 0;
+  }
 }
 
 .container {
@@ -4557,11 +4621,18 @@ form {
   -webkit-box-shadow: 0 .0625rem 0 rgba(0,0,0,.1);
   box-shadow: 0 .0625rem 0 rgba(0,0,0,.1);
   padding: 1.25rem 0 .75rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #e4f1e8;
 }
 
 @media (max-width:575.98px) {
   .header {
     padding: .5625rem 0;
+    position: relative;
   }
 }
 
