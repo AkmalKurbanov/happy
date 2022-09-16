@@ -23,29 +23,34 @@ $(document).ready(function () {
     $('.catalog__col:first').remove();
   }
 
-  $('.catalog__filter-trigger').on('click', function () {
+
+
+
+
+
+  $(document).on('click', '.catalog__filter-trigger', function () {
     $('.filter').addClass('open');
     $('body').addClass('no-scroll');
   });
-  $('.close-btn').on('click', function () {
+  $(document).on('click', '.close-btn', function () {
     $('.filter, .category-mobile, .price-mobile, .brand-mobile').removeClass('open');
     $('body').removeClass('no-scroll');
   });
 
-  $('.category-mobile-js').on('click', function () {
+  $(document).on('click', '.category-mobile-js', function () {
     $('.category-mobile').addClass('open');
     $('body').addClass('no-scroll');
   });
-  $('.price-mobile-js').on('click', function () {
+  $(document).on('click', '.price-mobile-js', function () {
     $('.price-mobile').addClass('open');
     $('body').addClass('no-scroll');
   });
-  $('.brand-mobile-js').on('click', function () {
+  $(document).on('click', '.brand-mobile-js', function () {
     $('.brand-mobile').addClass('open');
     $('body').addClass('no-scroll');
   });
 
-  $('.category-mobile .back, .price-mobile .back, .brand-mobile .back').on('click', function () {
+  $(document).on('click', '.category-mobile .back, .price-mobile .back, .brand-mobile .back', function () {
     $('.category-mobile, .price-mobile, .brand-mobile').removeClass('open');
     $('.filter').addClass('open');
   });

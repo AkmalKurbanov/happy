@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('.offer-credit').addClass('open');
     $('body').addClass('no-scroll');
   });
-  $('.close-btn').on('click', function () {
+  $(document).on('click', '.close-btn', function () {
     $('.offer-credit').removeClass('open');
   });
 });

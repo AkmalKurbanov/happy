@@ -9,7 +9,8 @@ $(document).ready(function () {
     $('#basket-panel').removeClass('open');
     $('body').removeClass('layer no-scroll');
   });
-  $(".cart__points-swich input").on('change', function () {
+
+  $(document).on('change', ".cart__points-swich input", function () {
     if (this.checked) {
       $('.points-input').show();
     } else {
@@ -21,7 +22,7 @@ $(document).ready(function () {
   }
 
   $(function () {
-    $('.activation input').on('keyup', function () {
+    $(document).on('keyup', '.activation input', function () {
       if ($(this).val() != '') {
         $(this).parent().addClass('active');
       } else {
@@ -31,10 +32,10 @@ $(document).ready(function () {
   });
 
 
-  $('.cart__total-info').on('mouseover', function () {
+  $(document).on('mouseover', '.cart__total-info', function () {
     $(this).parent().find('.cart__total-info-dropdown').addClass('open');
   });
-  $('.cart__total-info-dropdown').on('mouseout', function () {
+  $(document).on('mouseout', '.cart__total-info-dropdown', function () {
     $(this).removeClass('open');
   });
 
